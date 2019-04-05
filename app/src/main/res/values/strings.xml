@@ -3,4 +3,14 @@
     <string name="samen_werken_aan_een_ide_e_ale_wereld">Samen werken aan een ide(e)ale wereld</string>
     <string name="city_of_ideas">City of Ideas</string>
     <string name="copyright">© The Tree Company - 2019</string>
+
+    <string-array name="loadingScreen">
+    <item>Jouw ideeën zijn goud waard!</item>
+    <item>Samen werken aan een ide(e)ale wereld!</item>
+    <item>YEET INTO OBLIVION</item>
+    <item>Let me guess, someone stole your sweatroll.</item>
+    <item>FOR SKYRIM!</item>
+    <item>FUS RO DA!</item>
+    </string-array>
+
 </resources>

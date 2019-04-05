@@ -3,8 +3,12 @@ package com.spanishinquisition.treecompany
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var loadingTv : TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -12,5 +16,13 @@ class MainActivity : AppCompatActivity() {
         window.decorView.apply {
             systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         }
+        initialiseViews()
     }
-}
+    fun initialiseViews() {
+
+        loadingTv = findViewById(R.id.loadingCopyright)
+        val stringList = resources.getStringArray(R.array.loadingScreen)
+        loadingTv.text = stringList[Random.nextInt(stringList.size-1)]
+    }
+    }
+
