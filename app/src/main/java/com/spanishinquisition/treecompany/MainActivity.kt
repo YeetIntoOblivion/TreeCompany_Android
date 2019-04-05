@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
     fun initialiseViews() {
 
-        loadingTv = findViewById(R.id.loadingCopyright)
-        val stringList = resources.getStringArray(R.array.loadingScreen)
+        loadingTv = findViewById(R.id.blurbTv)
+        val stringList = resources.getStringArray(R.array.loading_screen)
         loadingTv.text = stringList[Random.nextInt(stringList.size-1)]
     }
     }

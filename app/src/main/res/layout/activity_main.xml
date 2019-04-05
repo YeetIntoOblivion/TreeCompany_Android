@@ -7,21 +7,25 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-            android:text="@string/city_of_ideas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/loadingTitle" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="44dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:textSize="36sp" android:textColor="@android:color/black"/>
     <ImageView
             android:layout_width="0dp"
             app:srcCompat="@drawable/logo"
             android:id="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/loadingTitle" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_height="436dp"/>
+            android:layout_height="400sp" android:contentDescription="@string/loading_img"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:text="@string/city_of_ideas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loadingTitle" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:textSize="36sp" android:textColor="@android:color/black" android:fontFamily="serif"
+            android:elevation="12dp"/>
     <TextView
             android:text="@string/copyright"
             android:layout_width="wrap_content"
@@ -29,26 +33,35 @@
             android:id="@+id/loadingCopyright"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loadingSpinner" app:layout_constraintHorizontal_bias="0.497"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent" android:textSize="12sp"/>
     <ProgressBar
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/loadingSpinner"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498" android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@+id/loadingQuote" android:progressTint="@android:color/holo_green_dark"
+            android:progressTint="@android:color/holo_green_dark"
             android:progressDrawable="@android:drawable/btn_star_big_on"
-    />
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/loadingQuote" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/loadingCopyright"/>
     <TextView
-            android:text="@string/samen_werken_aan_een_ide_e_ale_wereld"
+            android:text="@string/loading_quote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/loadingQuote"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginStart="8dp"
+            android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:textSize="18sp"/>
+            android:layout_marginEnd="8dp" android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"/>
+    <TextView
+            android:text="@string/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/blurbTv"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:textSize="12sp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/loadingSpinner"/>
 </android.support.constraint.ConstraintLayout>

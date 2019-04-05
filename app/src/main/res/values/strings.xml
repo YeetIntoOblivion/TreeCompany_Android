@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">TreeCompany</string>
-    <string name="samen_werken_aan_een_ide_e_ale_wereld">Samen werken aan een ide(e)ale wereld</string>
+    <string name="loading_quote">Samen werken aan een ide(e)ale wereld</string>
     <string name="city_of_ideas">City of Ideas</string>
     <string name="copyright">© The Tree Company - 2019</string>
+    <string name="loading">loading…</string>
+    <string name="loading_img">Loading Image</string>
 
-    <string-array name="loadingScreen">
-    <item>Jouw ideeën zijn goud waard!</item>
-    <item>Samen werken aan een ide(e)ale wereld!</item>
-    <item>YEET INTO OBLIVION</item>
-    <item>Let me guess, someone stole your sweatroll.</item>
-    <item>FOR SKYRIM!</item>
-    <item>FUS RO DA!</item>
+    <string-array name="loading_screen">
+        <item>Jouw ideeën zijn goud waard!</item>
+        <item>Straks bij jou in de buurt!</item>
+        <item>Laat je horen!</item>
+        <item>Deel de app met je vrienden!</item>
+        <item>Stem bij pancartes!</item>
     </string-array>
 
 </resources>
