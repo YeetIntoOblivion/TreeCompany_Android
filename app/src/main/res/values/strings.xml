@@ -17,5 +17,10 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Wachtwoord</string>
+    <string name="login_tv">Login</string>
+    <string name="startup_register_btn">Nog geen account? Registreer hier!</string>
+    <string name="forgot_password_btn">Wachtwoord vergeten?</string>
 
 </resources>
