@@ -1,13 +1,17 @@
 package com.spanishinquisition.treecompany
 
-import android.support.v7.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
     private lateinit var loadingTv : TextView
+    private lateinit var imageHome : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,13 +20,29 @@ class MainActivity : AppCompatActivity() {
         window.decorView.apply {
             systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         }
+
+
         initialiseViews()
     }
     fun initialiseViews() {
 
         loadingTv = findViewById(R.id.loadingCopyright)
         val stringList = resources.getStringArray(R.array.loadingScreen)
-        loadingTv.text = stringList[Random.nextInt(stringList.size-1)]
+        loadingTv.text = stringList[Random.nextInt(stringList.size - 1)]
+        imageHome = findViewById(R.id.treeHome)
+        imageHome.setImageResource(R.drawable.logo)
+
+        val t = Thread{
+            Thread.sleep(5000)
+
+            val intent =  Intent(this, HomeScreenActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        t.start()
+
+
     }
+
     }
 
