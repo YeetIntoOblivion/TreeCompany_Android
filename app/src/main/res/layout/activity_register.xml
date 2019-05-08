@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".LoginActivity"
+        tools:context=".RegisterActivity"
         android:background="@drawable/trees">
 
     <TextView
@@ -19,14 +19,6 @@
             android:textSize="36sp" android:textColor="@android:color/white"
             android:textStyle="bold"/>
 
-    <Button
-            android:text="@string/startup_register_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/registerBtn"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/loginLL"
-            app:layout_constraintEnd_toEndOf="@+id/loginLL" app:layout_constraintStart_toStartOf="@+id/loginLL"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="330dp"
@@ -47,50 +39,58 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:id="@+id/registerNameEt"
+                android:hint="@string/register_name"
+                android:padding="8dp"
+                android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:elevation="1dp"
+                tools:ignore="Autofill"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:id="@+id/registerBirthdayEt"
+                android:hint="@string/birthday"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:elevation="1dp"
+                tools:ignore="Autofill"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:inputType="textEmailAddress"
-                android:id="@+id/loginEmailEt"
+                android:id="@+id/registerEmailEt"
                 android:hint="@string/login_email"
+                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:elevation="1dp"
                 tools:ignore="Autofill"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
-                android:id="@+id/loginPasswordEt"
+                android:id="@+id/registerPasswordEt"
                 android:hint="@string/password"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp" android:layout_marginStart="16dp" android:elevation="1dp"
                 tools:ignore="Autofill"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/registerConfirmPasswordEt"
+                android:hint="@string/confirm_password"
+                android:padding="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp" android:layout_marginStart="16dp" android:elevation="1dp"
+                tools:ignore="Autofill"/>
         <Button
-                android:text="@string/forgot_password_btn"
-                android:layout_width="290dp"
-                android:layout_height="34dp"
-                android:id="@+id/loginForgotBtn" android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp" android:elevation="2dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:textSize="12sp"
-                android:textAlignment="textEnd"/>
-        <Button
-                android:text="@string/login_btn"
+                android:text="@string/register_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/loginBtn"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_marginTop="24dp" android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp" android:layout_marginBottom="16dp" android:elevation="2dp"/>
-        <Button
-                android:text="@string/login_google_btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/loginGoogleBtn" android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp" android:elevation="2dp"
-                android:drawableStart="@drawable/ic_google"/>
-        <Button
-                android:text="@string/login_microsoft_btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/loginMicrosoftBtn" android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp" android:layout_marginBottom="24dp" android:elevation="2dp"
-                android:drawableStart="@drawable/ic_microsoft"/>
+                android:layout_marginEnd="16dp" android:layout_marginBottom="16dp"
+                app:layout_constraintVertical_bias="0.0" android:elevation="2dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

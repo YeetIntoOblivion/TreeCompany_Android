@@ -3,7 +3,7 @@
     <string name="samen_werken_aan_een_ide_e_ale_wereld">Samen werken aan een ide(e)ale wereld</string>
     <string name="city_of_ideas">City of Ideas</string>
     <string name="copyright">© The Tree Company - 2019</string>
-    <string name="homeimage">HomeImage</string>
+    <string name="home_image">HomeImage</string>
 
     <string-array name="loadingScreen">
         <item>Jouw ideeën zijn goud waard!</item>
@@ -18,9 +18,15 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="login_email">Email</string>
-    <string name="login_password">Wachtwoord</string>
-    <string name="login_tv">Login</string>
+    <string name="password">Wachtwoord</string>
+    <string name="login_btn">Login</string>
     <string name="startup_register_btn">Nog geen account? Registreer hier!</string>
     <string name="forgot_password_btn">Wachtwoord vergeten?</string>
+    <string name="login_google_btn">Google</string>
+    <string name="login_microsoft_btn">Microsoft</string>
+    <string name="register_btn">Registreren</string>
+    <string name="register_name">Naam</string>
+    <string name="confirm_password">Bevestig wachtwoord</string>
+    <string name="birthday">Geboortedatum</string>
 
 </resources>
