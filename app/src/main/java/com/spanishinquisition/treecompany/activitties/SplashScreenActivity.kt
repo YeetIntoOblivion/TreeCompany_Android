@@ -7,11 +7,12 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.spanishinquisition.treecompany.R
+import com.spanishinquisition.treecompany.rest.RestClient
 import kotlin.random.Random
 
 class SplashScreenActivity : Activity() {
-    private lateinit var loadingTv : TextView
-    private lateinit var imageHome : ImageView
+    private lateinit var loadingTv: TextView
+    private lateinit var imageHome: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,7 @@ class SplashScreenActivity : Activity() {
 
         initialiseViews()
     }
+
     fun initialiseViews() {
 
         loadingTv = findViewById(R.id.loadingCopyright)
@@ -32,17 +34,17 @@ class SplashScreenActivity : Activity() {
         imageHome = findViewById(R.id.treeHome)
         imageHome.setImageResource(R.drawable.logo)
 
-        val t = Thread{
-            Thread.sleep(5000)
-
-            val intent =  Intent(this, HomeScreenActivity::class.java)
-            startActivity(intent)
-            finish()
+        val t = Thread {
+            Thread.sleep(7000)
+            if (RestClient(this).isConnectedToServer()) {
+                startActivity(Intent(this, HomeScreenActivity::class.java))
+                finish()
+            } else {
+                finish()
+            }
         }
         t.start()
-
-
     }
 
-    }
+}
 

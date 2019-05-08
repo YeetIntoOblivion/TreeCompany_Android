@@ -28,7 +28,17 @@ class RestClient(private val context: Context) {
         throw IOException("Unable to connect to network")
     }
 
-    fun bootTestConnection() {
-        val connection = connect(BASE_URL)
+    fun isConnectedToServer(): Boolean {
+        try {
+            val myUrl = URL(BASE_URL)
+            val connection = myUrl.openConnection()
+            connection.connectTimeout = 5000
+            connection.connect()
+            return true
+        } catch (e: Exception) {
+            // Handle your exceptions
+            return false
+        }
+
     }
 }
