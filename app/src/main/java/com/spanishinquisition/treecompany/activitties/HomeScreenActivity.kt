@@ -1,8 +1,8 @@
-package com.spanishinquisition.treecompany
+package com.spanishinquisition.treecompany.activitties
 
 import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.spanishinquisition.treecompany.R
 
 class HomeScreenActivity : Activity() {
 
