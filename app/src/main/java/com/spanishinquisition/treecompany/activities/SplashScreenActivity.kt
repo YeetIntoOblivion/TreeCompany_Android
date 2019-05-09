@@ -1,4 +1,4 @@
-package com.spanishinquisition.treecompany.activitties
+package com.spanishinquisition.treecompany.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -38,7 +38,7 @@ class SplashScreenActivity : Activity() {
         val t = Thread {
             Thread.sleep(5000)
             if (RestClient(this).isConnectedToServer()) {
-                startActivity(Intent(this, HomeScreenActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
             }

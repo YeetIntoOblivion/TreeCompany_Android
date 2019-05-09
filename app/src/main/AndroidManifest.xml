@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.spanishinquisition.treecompany">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.spanishinquisition.treecompany">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -13,20 +14,17 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
-            tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitties.RegisterActivity">
+            tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
+        <activity
+                android:name=".activities.MainActivity"
+                android:label="@string/title_activity_main"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".activitties.LoginActivity">
+        <activity android:name=".activities.RegisterActivity">
         </activity>
-        <activity android:name=".activitties.HomeScreenActivity">
+        <activity android:name=".activities.LoginActivity">
         </activity>
-        <!--<activity-->
-                <!--android:name=".HomeActivity"-->
-                <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
-                <!--android:label="@string/title_activity_home"-->
-                <!--android:theme="@style/FullscreenTheme">-->
-        <!--</activity>-->
-        <activity android:name=".activitties.SplashScreenActivity">
+        <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

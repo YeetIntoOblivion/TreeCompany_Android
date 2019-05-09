@@ -1,4 +1,4 @@
-package com.spanishinquisition.treecompany.activitties
+package com.spanishinquisition.treecompany.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
