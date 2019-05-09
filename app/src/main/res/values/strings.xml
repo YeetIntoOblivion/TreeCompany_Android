@@ -28,5 +28,6 @@
     <string name="register_name">Naam</string>
     <string name="confirm_password">Bevestig wachtwoord</string>
     <string name="birthday">Geboortedatum</string>
+    <string name="home">Home</string>
 
 </resources>
