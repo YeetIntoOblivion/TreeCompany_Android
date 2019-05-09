@@ -2,11 +2,12 @@ package com.spanishinquisition.treecompany.rest
 
 import android.content.Context
 import android.net.ConnectivityManager
+import android.util.Log
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
 
-const val BASE_URL = "http://10.0.2.2:5001"
+const val BASE_URL = "https://34.76.133.167/home/"
 
 class RestClient(private val context: Context) {
     private fun connect(urlString: String): HttpURLConnection {
@@ -36,7 +37,7 @@ class RestClient(private val context: Context) {
             connection.connect()
             return true
         } catch (e: Exception) {
-            // Handle your exceptions
+            Log.d("ERROR", e.toString())
             return false
         }
 

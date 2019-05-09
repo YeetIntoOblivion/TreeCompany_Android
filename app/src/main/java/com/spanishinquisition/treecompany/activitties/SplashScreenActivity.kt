@@ -21,30 +21,30 @@ class SplashScreenActivity : Activity() {
         window.decorView.apply {
             systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         }
-
-
         initialiseViews()
+        runSplash()
     }
 
-    fun initialiseViews() {
+    private fun initialiseViews() {
 
         loadingTv = findViewById(R.id.loadingCopyright)
         val stringList = resources.getStringArray(R.array.loadingScreen)
         loadingTv.text = stringList[Random.nextInt(stringList.size - 1)]
         imageHome = findViewById(R.id.treeHome)
         imageHome.setImageResource(R.drawable.logo)
+    }
 
+    private fun runSplash() {
         val t = Thread {
-            Thread.sleep(7000)
+            Thread.sleep(5000)
             if (RestClient(this).isConnectedToServer()) {
                 startActivity(Intent(this, HomeScreenActivity::class.java))
                 finish()
             } else {
-                finish()
             }
         }
         t.start()
     }
-
 }
+
 
