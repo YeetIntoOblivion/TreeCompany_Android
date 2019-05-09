@@ -41,6 +41,8 @@ class SplashScreenActivity : Activity() {
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
+                // TODO add alert with connectivity problems
+                finish()
             }
         }
         t.start()

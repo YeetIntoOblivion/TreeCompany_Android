@@ -37,5 +37,10 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
+    <string name="menu_qr">QR-code scannen</string>
+    <string name="menu_ideation">Ideeënborden</string>
+    <string name="menu_questionnaires">Vragenlijsten</string>
+    <string name="menu_info">Info</string>
+    <string name="menu_settings">Instellingen</string>
 
 </resources>
