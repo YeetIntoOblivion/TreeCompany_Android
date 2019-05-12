@@ -8,10 +8,7 @@
     <string-array name="loadingScreen">
         <item>Jouw ideeën zijn goud waard!</item>
         <item>Samen werken aan een ide(e)ale wereld!</item>
-        <item>YEET INTO OBLIVION</item>
-        <item>Let me guess, someone stole your sweatroll.</item>
-        <item>FOR SKYRIM!</item>
-        <item>FUS RO DA!</item>
+
     </string-array>
 
     <string name="dummy_button">Dummy Button</string>

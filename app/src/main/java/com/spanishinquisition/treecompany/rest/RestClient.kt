@@ -39,7 +39,7 @@ class RestClient(private val context: Context) {
         } catch (e: Exception) {
             Log.d("ERROR", e.toString())
             //TODO switch this back to false after disabling certificate check
-            return true
+            return false
         }
     }
 }
