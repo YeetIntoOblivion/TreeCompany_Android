@@ -18,9 +18,9 @@ class SplashScreenActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        window.decorView.apply {
-            systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        }
+//        window.decorView.apply {
+//            systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+//        }
         initialiseViews()
         runSplash()
     }

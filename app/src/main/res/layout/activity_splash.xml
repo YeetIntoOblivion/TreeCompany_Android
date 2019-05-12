@@ -11,17 +11,20 @@
             android:text="@string/city_of_ideas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/loadingTitle" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="44dp" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/loadingTitle" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:textSize="36sp" android:textColor="@android:color/black"/>
     <ImageView
             android:layout_width="0dp"
             app:srcCompat="@drawable/logo"
             android:id="@+id/treeHome"
-            app:layout_constraintTop_toBottomOf="@+id/loadingTitle" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_height="436dp" android:contentDescription="@string/home_image"/>
+            android:layout_height="400sp" android:contentDescription="@string/home_image"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/loadingTitle"/>
     <TextView
             android:text="@string/copyright"
             android:layout_width="wrap_content"
@@ -29,9 +32,7 @@
             android:id="@+id/loadingCopyright"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loadingSpinner" app:layout_constraintHorizontal_bias="0.497"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/loadingSpinner"/>
     <ProgressBar
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
@@ -39,8 +40,9 @@
             android:id="@+id/loadingSpinner"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498" android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@+id/loadingQuote" android:progressTint="@android:color/holo_green_dark"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/loadingQuote"
+            android:progressTint="@android:color/holo_green_dark"
             android:progressDrawable="@android:drawable/btn_star_big_on"
     />
     <TextView
@@ -48,7 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/loadingQuote"
-            app:layout_constraintTop_toBottomOf="@+id/treeHome" android:layout_marginStart="8dp"
+            android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:textSize="18sp"/>
+            android:layout_marginEnd="8dp" android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/treeHome"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
