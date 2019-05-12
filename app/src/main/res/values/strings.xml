@@ -42,5 +42,7 @@
     <string name="menu_questionnaires">Vragenlijsten</string>
     <string name="menu_info">Info</string>
     <string name="menu_settings">Instellingen</string>
+    <string name="connection_retry">Geen verbinding, opnieuw proberen</string>
+    <string name="connection_fail">Geen verbinding mogelijk, app wordt afgesloten</string>
 
 </resources>

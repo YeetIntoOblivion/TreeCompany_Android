@@ -38,8 +38,7 @@ class RestClient(private val context: Context) {
             return true
         } catch (e: Exception) {
             Log.d("ERROR", e.toString())
-            // TODO switch this back to false
-            return true
+            return false
         }
 
     }
