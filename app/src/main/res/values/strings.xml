@@ -3,19 +3,45 @@
     <string name="samen_werken_aan_een_ide_e_ale_wereld">Samen werken aan een ide(e)ale wereld</string>
     <string name="city_of_ideas">City of Ideas</string>
     <string name="copyright">© The Tree Company - 2019</string>
-    <string name="homeimage">HomeImage</string>
+    <string name="home_image">HomeImage</string>
 
     <string-array name="loadingScreen">
         <item>Jouw ideeën zijn goud waard!</item>
         <item>Samen werken aan een ide(e)ale wereld!</item>
-        <item>YEET INTO OBLIVION</item>
-        <item>Let me guess, someone stole your sweatroll.</item>
-        <item>FOR SKYRIM!</item>
-        <item>FUS RO DA!</item>
+
     </string-array>
 
-    <string name="title_activity_home">HomeActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="login_email">Email</string>
+    <string name="password">Wachtwoord</string>
+    <string name="login_btn">Login</string>
+    <string name="startup_register_btn">Nog geen account? Registreer hier!</string>
+    <string name="forgot_password_btn">Wachtwoord vergeten?</string>
+    <string name="login_google_btn">Google</string>
+    <string name="login_microsoft_btn">Microsoft</string>
+    <string name="register_btn">Registreren</string>
+    <string name="register_name">Naam</string>
+    <string name="confirm_password">Bevestig wachtwoord</string>
+    <string name="birthday">Geboortedatum</string>
+    <string name="home">Home</string>
+    <string name="title_activity_main">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_qr">QR-code scannen</string>
+    <string name="menu_ideation">Ideeënborden</string>
+    <string name="menu_questionnaires">Vragenlijsten</string>
+    <string name="menu_info">Info</string>
+    <string name="menu_settings">Instellingen</string>
+    <string name="connection_title">Verbindingsfout</string>
+    <string name="connection_msg">Geen verbinding, opnieuw proberen?</string>
+    <string name="connection_dialog_retry">Opnieuw</string>
+    <string name="connection_dialog_close">Afsluiten</string>
 
 </resources>
