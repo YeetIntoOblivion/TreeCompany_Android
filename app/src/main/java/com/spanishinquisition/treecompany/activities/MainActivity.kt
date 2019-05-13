@@ -1,8 +1,6 @@
 package com.spanishinquisition.treecompany.activities
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.MenuItem
@@ -10,7 +8,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import android.view.Menu
 import com.spanishinquisition.treecompany.R
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -42,42 +39,38 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        menuInflater.inflate(R.menu.main, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//            R.id.action_settings -> true
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_home -> {
-
+                supportActionBar?.setTitle(R.string.menu_home)
             }
             R.id.nav_qr -> {
-
+                supportActionBar?.setTitle(R.string.menu_qr)
             }
             R.id.nav_ideations -> {
-
+                supportActionBar?.setTitle(R.string.menu_ideations)
             }
             R.id.nav_questionnaires -> {
-
+                supportActionBar?.setTitle(R.string.menu_questionnaires)
             }
             R.id.nav_info -> {
-
+                supportActionBar?.setTitle(R.string.menu_info)
             }
             R.id.nav_settings -> {
-
+                supportActionBar?.setTitle(R.string.menu_settings)
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)

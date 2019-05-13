@@ -15,7 +15,7 @@
         <item
                 android:id="@+id/nav_ideations"
                 android:icon="@drawable/ic_menu_ideations"
-                android:title="@string/menu_ideation"/>
+                android:title="@string/menu_ideations"/>
         <item
                 android:id="@+id/nav_questionnaires"
                 android:icon="@drawable/ic_menu_questionnaires"

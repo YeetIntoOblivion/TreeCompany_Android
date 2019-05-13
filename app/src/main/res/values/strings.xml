@@ -24,7 +24,6 @@
     <string name="register_name">Naam</string>
     <string name="confirm_password">Bevestig wachtwoord</string>
     <string name="birthday">Geboortedatum</string>
-    <string name="home">Home</string>
     <string name="title_activity_main">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -35,7 +34,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_qr">QR-code scannen</string>
-    <string name="menu_ideation">Ideeënborden</string>
+    <string name="menu_ideations">Ideeënborden</string>
     <string name="menu_questionnaires">Vragenlijsten</string>
     <string name="menu_info">Info</string>
     <string name="menu_settings">Instellingen</string>
@@ -43,5 +42,8 @@
     <string name="connection_msg">Geen verbinding, opnieuw proberen?</string>
     <string name="connection_dialog_retry">Opnieuw</string>
     <string name="connection_dialog_close">Afsluiten</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
