@@ -8,11 +8,12 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
+import com.spanishinquisition.treecompany.fragments.HomeFragment
+import com.spanishinquisition.treecompany.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+        switchFragments(HomeFragment())
     }
 
     override fun onBackPressed() {
@@ -55,26 +57,37 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_home -> {
+                switchFragments(HomeFragment())
                 supportActionBar?.setTitle(R.string.menu_home)
             }
             R.id.nav_qr -> {
+                // TODO maak een fragment voor mij b!tch
                 supportActionBar?.setTitle(R.string.menu_qr)
             }
             R.id.nav_ideations -> {
+                // TODO maak een ideeënbord fragment voor mij b!tch
                 supportActionBar?.setTitle(R.string.menu_ideations)
             }
             R.id.nav_questionnaires -> {
+                // TODO maak een vragenlijst fragment voor mij b!tch
                 supportActionBar?.setTitle(R.string.menu_questionnaires)
             }
             R.id.nav_info -> {
+                // TODO maak een info fragment voor mij b!tch
                 supportActionBar?.setTitle(R.string.menu_info)
             }
             R.id.nav_settings -> {
+                switchFragments(SettingsFragment())
                 supportActionBar?.setTitle(R.string.menu_settings)
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun switchFragments(fragment: Fragment) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.mainContent, fragment).commit()
     }
 }
