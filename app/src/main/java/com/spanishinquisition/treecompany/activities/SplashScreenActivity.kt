@@ -66,6 +66,7 @@ class SplashScreenActivity : Activity() {
             setTitle(title)
             setPositiveButton(R.string.connection_dialog_retry) { _, _ -> testConnection() }
             setNegativeButton(R.string.connection_dialog_close) { _, _ -> finish() }
+            setCancelable(false)
         }
 
         builder.create().show()

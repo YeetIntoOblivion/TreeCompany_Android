@@ -39,12 +39,20 @@
     <string name="menu_info">Info</string>
     <string name="menu_settings">Instellingen</string>
     <string name="connection_title">Verbindingsfout</string>
-    <string name="connection_msg">Geen verbinding, opnieuw proberen?</string>
+    <string name="connection_msg">Geen verbinding met de server, opnieuw proberen?</string>
     <string name="connection_dialog_retry">Opnieuw</string>
     <string name="connection_dialog_close">Afsluiten</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="home_fragment">IK BEN DE HOME FRAGMENT RAWR RAWR</string>
     <string name="settings_fragment">IK BEN DE INSTELLINGEN FRAGMENT HIE HIE</string>
+
+    <string name="project_list_current_fase_tv">Laatste fase:</string>
+    <string name="project_list_project_name_tv">Projectnaam</string>
+    <string name="project_list_project_img_dsc">Project afbeelding</string>
+    <string name="project_list_project_status_tv">Project status</string>
+    <string name="project_list_likes">#</string>
+    <string name="project_list_shares">#</string>
+    <string name="project_list_ideas">#</string>
 
 </resources>
