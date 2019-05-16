@@ -10,7 +10,10 @@ import java.net.URL
 const val BASE_URL = "https://34.76.133.167/home/"
 
 class RestClient(private val context: Context) {
+
+
     private fun connect(urlString: String): HttpURLConnection {
+
         val connMgr = context.getSystemService(
             Context.CONNECTIVITY_SERVICE
         ) as ConnectivityManager

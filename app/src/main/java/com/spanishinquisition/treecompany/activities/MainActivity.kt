@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.fragments.HomeFragment
+import com.spanishinquisition.treecompany.fragments.IdeasFragment
 import com.spanishinquisition.treecompany.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_qr)
             }
             R.id.nav_ideations -> {
-                // TODO maak een ideeënbord fragment voor mij b!tch
+                switchFragments(IdeasFragment())
                 supportActionBar?.setTitle(R.string.menu_ideations)
             }
             R.id.nav_questionnaires -> {
