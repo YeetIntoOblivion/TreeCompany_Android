@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.IdeaAdapter
-import com.spanishinquisition.treecompany.model.getIdeas
 
 class IdeasFragment : Fragment() {
 
@@ -25,7 +24,9 @@ class IdeasFragment : Fragment() {
 
         view.findViewById<RecyclerView>(R.id.rvIdeas).apply {
             layoutManager = LinearLayoutManager(context)
+/*
             adapter = IdeaAdapter(getIdeas(), context)
+*/
 
         }
 
