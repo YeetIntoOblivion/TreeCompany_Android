@@ -4,12 +4,15 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.spanishinquisition.treecompany.R
-import com.spanishinquisition.treecompany.rest.RestClient
+import com.spanishinquisition.treecompany.connectivity.RestClient
+import java.io.Console
+import java.io.IOException
 import kotlin.random.Random
 
 class SplashScreenActivity : Activity() {
@@ -37,7 +40,7 @@ class SplashScreenActivity : Activity() {
         if (RestClient(this).isConnectedToServer())
             runSplash()
         else
-            showAlertDialog(this, R.string.connection_title,R.string.connection_msg)
+            showAlertDialog(this, R.string.connection_title, R.string.connection_msg)
     }
 
     private fun runSplash() {
@@ -71,6 +74,8 @@ class SplashScreenActivity : Activity() {
 
         builder.create().show()
     }
+
 }
+
 
 

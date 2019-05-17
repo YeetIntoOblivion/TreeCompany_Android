@@ -1,4 +1,4 @@
-package com.spanishinquisition.treecompany.rest
+package com.spanishinquisition.treecompany.connectivity
 
 import android.content.Context
 import android.net.ConnectivityManager
