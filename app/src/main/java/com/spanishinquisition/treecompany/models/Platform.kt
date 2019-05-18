@@ -16,14 +16,14 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 data class Platform(
 
-    @SerializedName("id") val id: Int,
-    @SerializedName("name") val name: String,
-    @SerializedName("url") val url: String,
-    @SerializedName("owners") val owners: String,
-    @SerializedName("users") val users: String,
-    @SerializedName("iconImage") val iconImage: String,
-    @SerializedName("carouselImage") val carouselImage: String,
-    @SerializedName("frontPageImage") val frontPageImage: String
+    @SerializedName("id") val id: Int?,
+    @SerializedName("name") val name: String?,
+    @SerializedName("url") val url: String?,
+    @SerializedName("owners") val owners: String?,
+    @SerializedName("users") val users: String?,
+    @SerializedName("iconImage") val iconImage: String?,
+    @SerializedName("carouselImage") val carouselImage: String?,
+    @SerializedName("frontPageImage") val frontPageImage: String?
 ) {}
 
 
