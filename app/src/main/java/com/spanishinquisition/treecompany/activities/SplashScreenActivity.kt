@@ -19,8 +19,6 @@ class SplashScreenActivity : Activity() {
     private lateinit var loadingTv: TextView
     private lateinit var imageHome: ImageView
 
-    private var isConnected: Boolean = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
