@@ -13,5 +13,6 @@ data class Project(
     val likeCount: Int,
     val fbLikeCount: Int,
     val twitterLikeCount: Int,
-    val likeVisibility: Int
+    val likeVisibility: Int,
+    val currentPhase: Phase
 )

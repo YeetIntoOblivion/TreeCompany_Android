@@ -14,18 +14,26 @@ class ProjectsAdapter(
     private val listener: OnProjectSelectedListener
 ) : RecyclerView.Adapter<ProjectViewHolder>() {
 
+    var projects: Array<Project> = arrayOf()
+    set(projects) {
+        field = projects
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.project_list_item, parent, false)
         return ProjectViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getItemCount(): Int = projects.size
 
-    override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onBindViewHolder(vh: ProjectViewHolder, index: Int) {
+        val project = projects[index]
+//        vh.projectImage.setImageBitmap()
+        vh.projectListName.text = project.title
+        vh.projectListStatus.text = project.status
+        vh.projectListPhase.text = project.currentPhase.description
     }
 
     interface OnProjectSelectedListener {

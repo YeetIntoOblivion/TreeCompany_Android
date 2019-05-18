@@ -4,15 +4,12 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.spanishinquisition.treecompany.R
-import com.spanishinquisition.treecompany.connectivity.RestClient
-import java.io.Console
-import java.io.IOException
+import com.spanishinquisition.treecompany.rest.RestClient
 import kotlin.random.Random
 
 class SplashScreenActivity : Activity() {
