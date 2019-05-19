@@ -11,8 +11,8 @@ import java.net.URL
 import io.reactivex.Observable
 import java.io.InputStreamReader
 
-const val INDEX_URL = "https://10.0.2.2:5001"
-const val BASE_URL = "https://10.0.2.2:5001"
+const val INDEX_URL = "http://10.0.2.2:5001"
+const val BASE_URL = "http://10.0.2.2:5001"
 
 class RestClient(private val context: Context) {
     private fun connect(urlString: String): HttpURLConnection {

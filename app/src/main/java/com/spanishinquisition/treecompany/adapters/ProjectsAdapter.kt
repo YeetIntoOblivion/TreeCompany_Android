@@ -30,10 +30,17 @@ class ProjectsAdapter(
 
     override fun onBindViewHolder(vh: ProjectViewHolder, index: Int) {
         val project = projects[index]
-//        vh.projectImage.setImageBitmap()
+        vh.projectImage.visibility = View.INVISIBLE
         vh.projectListName.text = project.title
         vh.projectListStatus.text = project.status
         vh.projectListPhase.text = project.currentPhase.description
+        vh.projectListLikes.text = project.likeCount.toString()
+        vh.projectListIdeas.visibility = View.INVISIBLE
+        vh.projectListComments.text = project.reactionCount.toString()
+
+        vh.itemView.setOnClickListener{
+            listener.OnProjectSelected(project)
+        }
     }
 
     interface OnProjectSelectedListener {
