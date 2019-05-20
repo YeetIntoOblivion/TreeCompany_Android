@@ -6,14 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
-import com.spanishinquisition.treecompany.models.Project
 import com.spanishinquisition.treecompany.rest.RestClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -47,7 +44,7 @@ class HomeFragment : Fragment() {
                     .subscribe({
                         (adapter as ProjectsAdapter).projects = it
                     }, {
-                        Toast.makeText(this@HomeFragment.context, it.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@HomeFragment.context, getString(R.string.connection_title), Toast.LENGTH_LONG).show()
                     })
             }
         return view

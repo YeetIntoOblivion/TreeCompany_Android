@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fragmentTransaction.replace(R.id.mainContent, fragment).commit()
     }
 
-    override fun OnProjectSelected(project: Project) {
+    override fun onProjectSelected(project: Project) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

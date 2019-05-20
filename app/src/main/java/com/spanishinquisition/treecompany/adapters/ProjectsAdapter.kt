@@ -39,12 +39,12 @@ class ProjectsAdapter(
         vh.projectListComments.text = project.reactionCount.toString()
 
         vh.itemView.setOnClickListener{
-            listener.OnProjectSelected(project)
+            listener.onProjectSelected(project)
         }
     }
 
     interface OnProjectSelectedListener {
-        fun OnProjectSelected(project: Project)
+        fun onProjectSelected(project: Project)
     }
 }
 
