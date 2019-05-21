@@ -56,5 +56,13 @@
     <string name="project_list_filter_tv">Filter</string>
     <string name="project_list_projects_tv">Projecten</string>
     <string name="project_list_comments">#</string>
+    <string name="project_list_project_goal_tv">Project doel</string>
+
+    <string-array name="project_list_filter_array">
+        <item>Naam</item>
+        <item>Status</item>
+        <item>Likes</item>
+        <item>Reacties</item>
+    </string-array>
 
 </resources>
