@@ -16,8 +16,6 @@ class SplashScreenActivity : Activity() {
     private lateinit var loadingTv: TextView
     private lateinit var imageHome: ImageView
 
-    private var isConnected: Boolean = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -37,7 +35,7 @@ class SplashScreenActivity : Activity() {
         if (RestClient(this).isConnectedToServer())
             runSplash()
         else
-            showAlertDialog(this, R.string.connection_title,R.string.connection_msg)
+            showAlertDialog(this, R.string.connection_title, R.string.connection_msg)
     }
 
     private fun runSplash() {
@@ -66,10 +64,13 @@ class SplashScreenActivity : Activity() {
             setTitle(title)
             setPositiveButton(R.string.connection_dialog_retry) { _, _ -> testConnection() }
             setNegativeButton(R.string.connection_dialog_close) { _, _ -> finish() }
+            setCancelable(false)
         }
 
         builder.create().show()
     }
+
 }
+
 
 

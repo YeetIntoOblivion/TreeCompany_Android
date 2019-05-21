@@ -53,4 +53,15 @@
     <string name="stem">Stemmen</string>
     <string name="reageer">Reageren</string>
 
+    <string name="project_list_current_fase_tv">Laatste fase:</string>
+    <string name="project_list_project_name_tv">Projectnaam</string>
+    <string name="project_list_project_img_dsc">Project afbeelding</string>
+    <string name="project_list_project_status_tv">Project status</string>
+    <string name="project_list_likes">#</string>
+    <string name="project_list_shares">#</string>
+    <string name="project_list_ideas">#</string>
+    <string name="project_list_filter_tv">Filter</string>
+    <string name="project_list_projects_tv">Projecten</string>
+    <string name="project_list_comments">#</string>
+
 </resources>
