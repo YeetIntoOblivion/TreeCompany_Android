@@ -1,7 +1,7 @@
 package com.spanishinquisition.treecompany.models
 
-enum class ModuleType {
+enum class ModuleType (int:Int){
     // TODO aanvullen missende attributen
-    Questionnaire,
-    Ideation
+    Questionnaire(0),
+    Ideation(1)
 }
