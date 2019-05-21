@@ -2,6 +2,7 @@ package com.spanishinquisition.treecompany.rest
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.database.Observable
 import android.net.ConnectivityManager
 import com.google.gson.GsonBuilder
 import com.spanishinquisition.treecompany.models.Project
@@ -87,7 +88,7 @@ class RestClient(private val context: Context) {
         return false
     }
 
-    fun getProjects(platformId: Int): Observable<Array<Project>> {
+    /*fun getProjects(platformId: Int): Observable<Array<Project>> {
         return Observable.create { emitter ->
             try {
                 val response = connect("$BASE_URL/api/Project/GetAllByPlatform?platformId=$platformId")
@@ -99,5 +100,5 @@ class RestClient(private val context: Context) {
                 emitter.onError(e)
             }
         }
-    }
+    }*/
 }

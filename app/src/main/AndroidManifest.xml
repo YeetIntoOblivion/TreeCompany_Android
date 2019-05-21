@@ -24,6 +24,9 @@
         </activity>
         <activity android:name=".activities.LoginActivity">
         </activity>
+
+        <activity android:name=".activities.ConnectActivity"/>
+
         <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
