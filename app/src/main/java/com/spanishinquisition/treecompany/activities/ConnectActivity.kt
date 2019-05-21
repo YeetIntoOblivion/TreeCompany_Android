@@ -5,7 +5,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.Project
-import com.spanishinquisition.treecompany.rest.GetRetroFit
+import com.spanishinquisition.treecompany.rest.RetroFit
 
 import retrofit2.Callback
 import retrofit2.Call
@@ -30,7 +30,7 @@ class ConnectActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this@ConnectActivity)
 
 
-        val service = GetRetroFit()
+        val service = RetroFit.GetClientRf()
         val call = service.GetAllByPlatform(1);
 
         call.enqueue(object : Callback<List<Project>> {
