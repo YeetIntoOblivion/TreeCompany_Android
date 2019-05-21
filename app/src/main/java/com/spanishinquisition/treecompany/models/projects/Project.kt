@@ -6,7 +6,7 @@ import com.spanishinquisition.treecompany.models.User
 
 data class Project (
 
-	@SerializedName("id") val id : Int?,
+	@SerializedName("id") val id : Int,
 	@SerializedName("platform") val platform : Platform?,
 	@SerializedName("user") val user : User?,
 	@SerializedName("title") val title : String?,
@@ -18,8 +18,8 @@ data class Project (
 	@SerializedName("fbLikeCount") val fbLikeCount : Int?,
 	@SerializedName("twitterLikeCount") val twitterLikeCount : Int?,
 	@SerializedName("likeVisibility") val likeVisibility : Int?,
-	@SerializedName("currentPhase") val phase : Phase?,
-	@SerializedName("phases") val phases : String?,
+	@SerializedName("currentPhase") val currentPhase : Phase?,
+	@SerializedName("phases") val phases : List<Phase>,
 	@SerializedName("previewImages") val previewImages : String?,
 	@SerializedName("modules") val modules : String?
 )

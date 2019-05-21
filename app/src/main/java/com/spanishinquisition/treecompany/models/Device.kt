@@ -1,7 +1,12 @@
 package com.spanishinquisition.treecompany.models
 
- data class Device1 (
+import com.google.gson.annotations.SerializedName
 
-     id :Int
+data class Device(
 
- )
+
+    @SerializedName("id") val id: Int,
+    @SerializedName("locationX") val locationX: Int,
+    @SerializedName("locationY") val locationY: Int
+
+)

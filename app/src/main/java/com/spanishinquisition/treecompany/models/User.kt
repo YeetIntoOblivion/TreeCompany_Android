@@ -14,7 +14,9 @@ data class User (
 	@SerializedName("description") val description : String?,
 	@SerializedName("banned") val banned : Boolean?,
 	@SerializedName("active") val active : Boolean?,
-	@SerializedName("id") val id : Int?,
+
+
+	@SerializedName("id") val id : String,
 	@SerializedName("userName") val userName : String?,
 	@SerializedName("normalizedUserName") val normalizedUserName : String?,
 	@SerializedName("email") val email : String?,

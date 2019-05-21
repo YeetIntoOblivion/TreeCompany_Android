@@ -1,6 +1,6 @@
 package com.spanishinquisition.treecompany.models
 
-data class Module (
+data class  Module (
     // TODO aanvullen missende attributen
     val id: Int,
     val project: Project,

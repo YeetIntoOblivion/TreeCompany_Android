@@ -1,3 +1,4 @@
+/*
 package com.spanishinquisition.treecompany.rest
 
 import com.spanishinquisition.treecompany.models.projects.Ideation
@@ -45,3 +46,4 @@ interface ApiService {
 
 
 }
+*/

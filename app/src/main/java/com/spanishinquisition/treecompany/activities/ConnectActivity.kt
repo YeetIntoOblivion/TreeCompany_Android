@@ -1,3 +1,4 @@
+/*
 package com.spanishinquisition.treecompany.activities
 
 import android.os.Bundle
@@ -47,4 +48,4 @@ class ConnectActivity : AppCompatActivity() {
         })
 
     }
-}
+}*/

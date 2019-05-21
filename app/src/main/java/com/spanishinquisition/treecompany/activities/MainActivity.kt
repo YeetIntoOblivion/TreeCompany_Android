@@ -13,9 +13,10 @@ import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.fragments.HomeFragment
 import com.spanishinquisition.treecompany.fragments.IdeasFragment
+
+
 import com.spanishinquisition.treecompany.fragments.SettingsFragment
 import com.spanishinquisition.treecompany.models.projects.Project
-import com.spanishinquisition.treecompany.rest.GetRetroFit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

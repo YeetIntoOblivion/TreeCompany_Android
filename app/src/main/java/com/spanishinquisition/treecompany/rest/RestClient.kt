@@ -1,6 +1,7 @@
 package com.spanishinquisition.treecompany.rest
 
 import android.content.Context
+import android.database.Observable
 import android.net.ConnectivityManager
 import android.util.Log
 import com.google.gson.GsonBuilder
@@ -8,7 +9,9 @@ import com.spanishinquisition.treecompany.models.Project
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
+/*
 import io.reactivex.Observable
+*/
 import java.io.InputStreamReader
 
 const val INDEX_URL = "https://10.0.2.2:5001"
@@ -51,7 +54,7 @@ class RestClient(private val context: Context) {
         }
     }
 
-    fun getProjects(platformId: Int): Observable<Array<Project>> {
+    /*fun getProjects(platformId: Int): Observable<Array<Project>> {
         return Observable.create { emitter ->
             try {
                 val connection = connect("$BASE_URL/api/Project/GetAllByPlatform?platformId=$platformId")
@@ -62,5 +65,5 @@ class RestClient(private val context: Context) {
                 emitter.onError(e)
             }
         }
-    }
+    }*/
 }

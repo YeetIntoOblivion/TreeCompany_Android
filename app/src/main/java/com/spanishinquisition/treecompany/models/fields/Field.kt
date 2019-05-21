@@ -1,6 +1,7 @@
-package com.spanishinquisition.treecompany.models
+package com.spanishinquisition.treecompany.models.fields
 
 import com.google.gson.annotations.SerializedName
+import com.spanishinquisition.treecompany.models.Idea
 
 data class Field (
 
@@ -8,4 +9,5 @@ data class Field (
     @SerializedName("text") val text : String,
     @SerializedName("textLength") val textLength : Int,
     @SerializedName("idea") val idea : Idea
+
 )

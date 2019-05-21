@@ -1,43 +1,78 @@
 package com.spanishinquisition.treecompany.rest
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.spanishinquisition.treecompany.models.Idea
+import com.spanishinquisition.treecompany.models.projects.Ideation
+import com.spanishinquisition.treecompany.models.projects.Module
+import com.spanishinquisition.treecompany.models.projects.Project
+import com.spanishinquisition.treecompany.models.projects.Questionnaire
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import java.util.concurrent.TimeUnit
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 var base_url: String = "http://10.0.2.2:5000/"
 
-class RetroFit {
 
-    companion object {
+fun getClient(): ApiService {
 
-        private var builder = Retrofit.Builder()
-            .baseUrl(base_url)
-            .addConverterFactory(GsonConverterFactory.create())
 
-        private var retrofit: Retrofit = builder.build()
+    val gson = GsonBuilder()
+        .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        .create()
 
-        private var loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    val retrofit = Retrofit.Builder()
+        .baseUrl(base_url)
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .build()
 
-        private var httpClientBuilder = OkHttpClient.Builder()
+    return retrofit.create(
+        ApiService::class.java
+    )
 
-        fun GetClientRf(): ApiService {
-
-            if (!httpClientBuilder.interceptors().contains(loggingInterceptor)) {
-                httpClientBuilder.addInterceptor(loggingInterceptor)
-                builder = builder.client(httpClientBuilder.build())
-                retrofit = builder.build()
-            }
-            return retrofit.create(ApiService::class.java)
-
-        }
-    }
 }
 
 
+interface ApiService {
 
+    //PROJECTCONTROLLER
+    //Get all PROJECTS in a platform
+    @GET("api/project/GetAllByPlatform")
+    fun GetAllByPlatform(@Query("platformId") id: Int): Call<List<Project>>
+
+    //GET PROJECT BY ID
+    @GET("api/project/GetById")
+    fun GetById(@Query("projectId") id: Int): Call<Project>
+
+    //TODO(put)
+
+
+    //MODULECONTROLLER
+    //GET list all the modules of one project
+    @GET("api/module/GetModules")
+    fun GetModules(@Query("projectId") id: Int): Call<List<Module>>
+
+
+    @GET("api/module/GetQuestionnaire")
+    fun GetQuestionnaire(@Query("projectId") projectId: Int, @Query("phaseId") phaseId: Int): Call<Questionnaire>
+
+    @GET("api/module/GetIdeation")
+    fun GetIdeation(@Query("projectId") projectId: Int, @Query("phaseId") phaseId: Int): Call<Ideation>
+
+    @GET("api/module/GetModuleForPhase")
+    fun GetModuleForPhase(@Query("phaseId") phaseId: Int): Call<Module>
+
+    // TODO() POST AND PUT
+
+
+    @GET("api/module/GetIdeas")
+    fun GetIdeas(@Query("id") id: Int): Call<List<Idea>>
+}
+
+
+/*
+                .client(UnsafeOkHttpClient.getUnsafeOkHttpClient().build())
+*/
 
 
