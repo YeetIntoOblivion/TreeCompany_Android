@@ -24,6 +24,7 @@ fun getClient(): ApiService {
 
     val retrofit = Retrofit.Builder()
         .baseUrl(base_url)
+        .client(UnsafeOkHttpClient.getUnsafeOkHttpClient().build())
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 

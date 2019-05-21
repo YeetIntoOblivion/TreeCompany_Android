@@ -18,8 +18,6 @@ class IdeaAdapter(
     private val ideaSelectionListener: IdeaAdapter.IdeaSelectionListener
 */
 ) : RecyclerView.Adapter<IdeaAdapter.IdeaViewHolder>() {
-
-
     class IdeaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val Titel: TextView = view.IdeaTitel
@@ -52,9 +50,9 @@ class IdeaAdapter(
         vh.Text.text = idea.field!!.text
         vh.Like.text = idea.voteCount.toString()
 
-       /* vh.itemView.setOnClickListener {
-            ideaSelectionListener.onIdeaSelected(ideas[index])
-        }*/
+        /* vh.itemView.setOnClickListener {
+             ideaSelectionListener.onIdeaSelected(ideas[index])
+         }*/
     }
 
     interface IdeaSelectionListener {

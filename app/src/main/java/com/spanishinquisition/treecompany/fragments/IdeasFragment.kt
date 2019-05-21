@@ -72,28 +72,3 @@ class IdeasFragment : Fragment() {
     }
 }
 
-/*
-
- fun getProjects() {
-         val service = RetroFit.GetClientRf()
-         val call = service.GetAllByPlatform(1);
-
-         call.enqueue(object : Callback<List<Project>> {
-             override fun onResponse(call: Call<List<Project>>?, response: Response<List<Project>>?) {
-                 if (response != null) {
-                     list = response.body()
-                 }
-             }
-             override fun onFailure(call: Call<List<Project>>?, t: Throwable?) {
-                 try {
-                     Log.d("TAG", t!!.message)
-                 } catch (e: Exception) {
-                 }
-             }
-         })
-     }
-
-
-
-}
-*/
