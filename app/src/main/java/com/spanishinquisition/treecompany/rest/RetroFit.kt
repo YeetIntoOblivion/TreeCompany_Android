@@ -77,5 +77,5 @@ interface ApiService {
 
 
     @GET("api/module/GetIdeas")
-    fun GetIdeas(@Query("id") id: Int): Call<List<Idea>>
+    fun GetIdeas(@Query("questionId") questionId: Int): Call<List<Idea>>
 }
