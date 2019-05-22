@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent" android:id="@+id/projectView">
+
+    <TextView
+
+            android:text="@string/projecttitle"
+            android:layout_width="0dp"
+            android:layout_height="30dp" android:id="@+id/projectTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintHorizontal_bias="1.0"/>
+    <TextView
+            android:text="Huidige Fase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/curPhase"
+            app:layout_constrainedStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/projectTitle"
+            app:layout_constraintHorizontal_bias="0.498" android:layout_marginTop="10dp"/>
+    <TextView
+            android:text="PhaseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/curPhase2"
+            app:layout_constrainedStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/curPhase" android:layout_marginTop="5dp"
+            app:layout_constraintHorizontal_bias="0.49"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/projectView"
+            app:layout_constraintTop_toBottomOf="@+id/curPhase2"
+            android:text="Progress"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="3dp"/>
+    <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/projectProgress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="3dp" android:layout_marginEnd="3dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+    <TextView
+            android:text="Start van het project:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelStart" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="3dp" app:layout_constraintTop_toBottomOf="@+id/projectProgress"
+            android:layout_marginTop="20dp"/>
+    <TextView
+            android:text="Einde van het project:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelEnd" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="3dp"
+            app:layout_constraintTop_toBottomOf="@+id/labelStart" android:layout_marginTop="10dp"/>
+    <TextView
+            android:text="--/--/--"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="154dp"
+            tools:layout_editor_absoluteX="348dp" android:id="@+id/valueStart"/>
+    <TextView
+            android:text="--/--/--"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="182dp"
+            tools:layout_editor_absoluteX="347dp" android:id="@+id/valueEnd"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,5 +43,6 @@
     <string name="connection_msg">Geen verbinding, opnieuw proberen?</string>
     <string name="connection_dialog_retry">Opnieuw</string>
     <string name="connection_dialog_close">Afsluiten</string>
+    <string name="projecttitle">ProjectTitle</string>
 
 </resources>
