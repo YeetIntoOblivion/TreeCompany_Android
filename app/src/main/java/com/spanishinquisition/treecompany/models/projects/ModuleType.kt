@@ -1,4 +1,5 @@
 package com.spanishinquisition.treecompany.models.projects
 
-
-//TODO()
+//data class ModuleType{
+//    //TODO()
+//}

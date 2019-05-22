@@ -55,10 +55,10 @@ android:background="@color/colorCard">
                 android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"/>
         <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="@color/black_overlay"
+                android:background="#A2E088"
                 app:layout_constraintStart_toStartOf="@+id/constraintLayout"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -67,12 +67,7 @@ android:background="@color/colorCard">
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/guideline" app:layout_constraintGuide_percent=".33"/>
-        <androidx.constraintlayout.widget.Guideline
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/guideline2"
-                app:layout_constraintGuide_percent=".66"/>
+                android:id="@+id/guideline" app:layout_constraintGuide_percent=".5"/>
         <TextView
                 android:text="@string/project_list_likes"
                 android:layout_width="wrap_content"
@@ -88,17 +83,6 @@ android:background="@color/colorCard">
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         <TextView
-                android:text="@string/project_list_ideas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/projectListIdeas"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/projectListPhase"
-                android:drawableStart="@drawable/ic_menu_ideations"
-                android:drawablePadding="3dp" android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="@+id/guideline" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginTop="8dp"/>
-        <TextView
                 android:text="@string/project_list_comments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,7 +92,7 @@ android:background="@color/colorCard">
                 android:drawableStart="@drawable/ic_comment"
                 android:drawablePadding="3dp"
                 android:layout_marginTop="8dp" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/guideline"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

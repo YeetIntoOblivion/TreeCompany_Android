@@ -14,16 +14,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
-import com.spanishinquisition.treecompany.models.Project
-import com.spanishinquisition.treecompany.rest.RestClient
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import com.spanishinquisition.treecompany.models.projects.Project
+import com.spanishinquisition.treecompany.rest.getClient
 import kotlinx.android.synthetic.main.fragment_home.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var listener: ProjectsAdapter.OnProjectSelectedListener
     private lateinit var spinner: Spinner
-    private lateinit var projects: Array<Project>
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -38,26 +38,14 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
         view.projectListRV
             .apply {
                 adapter = ProjectsAdapter(listener)
                 layoutManager = LinearLayoutManager(context)
-
-                RestClient(context)
-                    .getProjects(1)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io())
-                    .subscribe({
-                        (adapter as ProjectsAdapter).projects = it
-                        projects = it
-                    }, {
-                        Toast.makeText(
-                            this@HomeFragment.context,
-                            getString(R.string.connection_title),
-                            Toast.LENGTH_LONG
-                        ).show()
-                    })
             }
+        getProjects(1)
+
         initialiseViews(view)
         return view
     }
@@ -79,24 +67,57 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         when (position) {
             0 -> {
-                projects.sortBy { project -> project.title }
-
-                view?.projectListRV?.adapter?.notifyDataSetChanged()
             }
             1 -> {
-                projects.sortBy { project -> project.status }
-                view?.projectListRV?.adapter?.notifyDataSetChanged()
+                getSortedProjects(1, 1)
             }
             2 -> {
-                projects.sortBy { project -> project.likeCount }
-                view?.projectListRV?.adapter?.notifyDataSetChanged()
+                getSortedProjects(2, 1)
             }
             3 -> {
-                projects.sortBy { project -> project.reactionCount }
-                view?.projectListRV?.adapter?.notifyDataSetChanged()
+                getSortedProjects(3, 1)
+            }
+            4 -> {
+                getSortedProjects(4, 1)
             }
         }
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}
+
+    private fun getProjects(platformId: Int) {
+        val call = getClient().GetAllByPlatform(platformId)
+        call.enqueue(object : Callback<List<Project>> {
+            override fun onResponse(call: Call<List<Project>>, response: Response<List<Project>>) {
+                val projects = response.body()
+                (view!!.projectListRV.adapter as ProjectsAdapter).projects = projects!!.toTypedArray()
+            }
+
+            override fun onFailure(call: Call<List<Project>>, t: Throwable) {
+                Toast.makeText(
+                    this@HomeFragment.context,
+                    getString(R.string.connection_title),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+    }
+
+    private fun getSortedProjects(quota: Int, platformId: Int) {
+        val call = getClient().SortedBy(quota, platformId)
+        call.enqueue(object : Callback<List<Project>> {
+            override fun onResponse(call: Call<List<Project>>, response: Response<List<Project>>) {
+                val projects = response.body()
+                (view!!.projectListRV.adapter as ProjectsAdapter).projects = projects!!.toTypedArray()
+            }
+
+            override fun onFailure(call: Call<List<Project>>, t: Throwable) {
+                Toast.makeText(
+                    this@HomeFragment.context,
+                    getString(R.string.connection_title),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+    }
 }

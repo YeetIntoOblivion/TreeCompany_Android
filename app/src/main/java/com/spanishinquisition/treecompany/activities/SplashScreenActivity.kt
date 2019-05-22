@@ -9,7 +9,7 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.spanishinquisition.treecompany.R
-import com.spanishinquisition.treecompany.rest.RestClient
+import com.spanishinquisition.treecompany.rest.SplashConnection
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -53,7 +53,7 @@ class SplashScreenActivity : Activity() {
 
     private fun contactBackEnd() {
         val observable = Observable.create<Boolean> { emitter ->
-            emitter.onNext(RestClient(this).isConnectedToServer())
+            emitter.onNext(SplashConnection(this).isConnectedToServer())
         }
 
         localhostSubscription = observable

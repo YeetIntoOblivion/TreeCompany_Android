@@ -6,23 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.spanishinquisition.treecompany.R
-import com.spanishinquisition.treecompany.models.Project
+import com.spanishinquisition.treecompany.models.projects.Project
 import kotlinx.android.synthetic.main.project_list_item.view.*
 
 class ProjectsAdapter(
-
     private val listener: OnProjectSelectedListener
-) : RecyclerView.Adapter<ProjectsAdapter.ProjectViewHolder>() {
-
-    class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val projectImage: ImageView = view.projectImage
-        val projectListName: TextView = view.projectListName
-        val projectListStatus: TextView = view.projectListStatus
-        val projectListPhase: TextView = view.projectListPhase
-        val projectListLikes: TextView = view.projectListLikes
-        val projectListIdeas: TextView = view.projectListIdeas
-        val projectListComments: TextView = view.projectListComments
-    }
+) : RecyclerView.Adapter<ProjectViewHolder>() {
 
     var projects: Array<Project> = arrayOf()
         set(projects) {
@@ -43,9 +32,8 @@ class ProjectsAdapter(
         vh.projectListName.text = project.title
         vh.projectListGoal.text = project.goal
         vh.projectListStatus.text = project.status
-        vh.projectListPhase.text = project.currentPhase.description
+        vh.projectListPhase.text = project.currentPhase?.description
         vh.projectListLikes.text = project.likeCount.toString()
-        vh.projectListIdeas.visibility = View.INVISIBLE
         vh.projectListComments.text = project.reactionCount.toString()
 
         vh.itemView.setOnClickListener {
@@ -57,7 +45,6 @@ class ProjectsAdapter(
         fun onProjectSelected(project: Project)
     }
 
-
 }
 
 class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -66,6 +53,5 @@ class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val projectListStatus: TextView = view.projectListStatus
     val projectListPhase: TextView = view.projectListPhase
     val projectListLikes: TextView = view.projectListLikes
-    val projectListIdeas: TextView = view.projectListIdeas
     val projectListComments: TextView = view.projectListComments
 }

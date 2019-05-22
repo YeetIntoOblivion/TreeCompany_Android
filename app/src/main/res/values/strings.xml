@@ -65,6 +65,7 @@
     <string name="project_list_project_goal_tv">Project doel</string>
 
     <string-array name="project_list_filter_array">
+        <item>Geen</item>
         <item>Naam</item>
         <item>Status</item>
         <item>Likes</item>
