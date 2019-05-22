@@ -1,6 +1,7 @@
 package com.spanishinquisition.treecompany.models.projects
 
 import com.google.gson.annotations.SerializedName
+import com.spanishinquisition.treecompany.models.ModuleType
 
 
 open class Module(
@@ -15,7 +16,7 @@ open class Module(
     @SerializedName("shareCount") val shareCount: Int,
     @SerializedName("retweetCount") val retweetCount: Int,
     @SerializedName("voteLevel") val voteLevel: Int,
-//    @SerializedName("moduleType") val moduleType: ModuleType, //TODO(MODULETYPE)
+    @SerializedName("moduleType") val moduleType: ModuleType,
     @SerializedName("phases") val phases: List<Phase>,
     @SerializedName("tags") val tags: List<String>
 )

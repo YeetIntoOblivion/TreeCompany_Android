@@ -18,7 +18,7 @@ class IdeaAdapter(
 ) : RecyclerView.Adapter<IdeaAdapter.IdeaViewHolder>() {
     class IdeaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val Titel: TextView = view.IdeaTitel
+        val Titel: TextView = view.tvTitel
         val Text: TextView = view.IdeaText
         val Like: TextView = view.IdeaLike
     }

@@ -10,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.spanishinquisition.treecompany.R
@@ -20,10 +21,12 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.nio.channels.Selector
 
 class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var listener: ProjectsAdapter.OnProjectSelectedListener
     private lateinit var spinner: Spinner
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -47,6 +50,7 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         getProjects(1)
 
         initialiseViews(view)
+
         return view
     }
 

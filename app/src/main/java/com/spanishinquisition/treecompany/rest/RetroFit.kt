@@ -61,7 +61,7 @@ interface ApiService {
     //MODULECONTROLLER
     //GET list all the modules of one project
     @GET("api/module/GetModules")
-    fun GetModules(@Query("projectId") id: Int): Call<List<Module>>
+    fun GetModules(@Query("projectId") projectId: Int): Call<List<Module>>
 
 
     @GET("api/module/GetQuestionnaire")

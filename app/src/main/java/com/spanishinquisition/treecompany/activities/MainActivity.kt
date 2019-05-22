@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.MenuItem
-import androidx.appcompat.app.AlertDialog
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,17 +12,15 @@ import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
 import com.spanishinquisition.treecompany.fragments.HomeFragment
-import com.spanishinquisition.treecompany.fragments.IdeasFragment
+import com.spanishinquisition.treecompany.fragments.ModuleFragment
 
 
 import com.spanishinquisition.treecompany.fragments.SettingsFragment
-import com.spanishinquisition.treecompany.models.projects.Project
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.spanishinquisition.treecompany.models.projects.Module
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ProjectsAdapter.OnProjectSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+    ProjectsAdapter.OnProjectSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -65,7 +62,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_qr)
             }
             R.id.nav_ideations -> {
-                switchFragments(IdeasFragment())
+                switchFragments(ModuleFragment())
                 supportActionBar?.setTitle(R.string.menu_ideations)
             }
             R.id.nav_questionnaires -> {
@@ -91,7 +88,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fragmentTransaction.replace(R.id.mainContent, fragment).commit()
     }
 
-    override fun onProjectSelected(project: Project) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onProjectSelected(projectID: Int) {
+
+        //TODO()
+
     }
 }
+
+
