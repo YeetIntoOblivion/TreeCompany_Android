@@ -2,6 +2,7 @@ package com.spanishinquisition.treecompany.rest
 
 import com.google.gson.GsonBuilder
 import com.spanishinquisition.treecompany.models.Idea
+import com.spanishinquisition.treecompany.models.User
 import com.spanishinquisition.treecompany.models.projects.Ideation
 import com.spanishinquisition.treecompany.models.projects.Module
 import com.spanishinquisition.treecompany.models.projects.Project
@@ -9,8 +10,7 @@ import com.spanishinquisition.treecompany.models.projects.Questionnaire
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 var base_url: String = "http://10.0.2.2:5000/"
 
@@ -36,6 +36,15 @@ fun getClient(): ApiService {
 
 
 interface ApiService {
+
+    //USERCONTROLLER
+    @FormUrlEncoded
+    @POST("api/User/Login")
+    fun userLogin(
+        @Field("Email")email:String,
+        @Field("Password")passwd:String
+
+    ):Call<User>
 
     //PROJECTCONTROLLER
     //Get all PROJECTS in a platform
