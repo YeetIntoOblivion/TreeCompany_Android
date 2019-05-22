@@ -103,6 +103,7 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         })
     }
 
+    //TODO Fix the nullpointer exception
     private fun getSortedProjects(quota: Int, platformId: Int) {
         val call = getClient().SortedBy(quota, platformId)
         call.enqueue(object : Callback<List<Project>> {
