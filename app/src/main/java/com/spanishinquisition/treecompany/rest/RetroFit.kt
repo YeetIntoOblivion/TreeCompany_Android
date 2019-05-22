@@ -34,15 +34,11 @@ fun getClient(): ApiService {
 interface ApiService {
 
     //PROJECTCONTROLLER
-    //Get all PROJECTS in a platform
-    @GET("api/project/GetAllByPlatform")
-    fun GetAllByPlatform(@Query("platformId") plaformId: Int): Call<List<Project>>
-
     //GET PROJECT BY ID
     @GET("api/project/GetById")
     fun GetById(@Query("projectId") projectId: Int): Call<Project>
 
-    //GET SORTED PROJECTS
+    //GET SORTED PROJECTS BY PLATFORM ID
     @GET("api/project/SortedBy")
     fun SortedBy(@Query("quota") quota: Int, @Query("platformId") platformId: Int): Call<List<Project>>
 

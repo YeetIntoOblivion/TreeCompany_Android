@@ -44,7 +44,6 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 adapter = ProjectsAdapter(listener)
                 layoutManager = LinearLayoutManager(context)
             }
-        getProjects(1)
 
         initialiseViews(view)
         return view
@@ -67,6 +66,7 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         when (position) {
             0 -> {
+                getSortedProjects(0, 1)
             }
             1 -> {
                 getSortedProjects(1, 1)
@@ -85,25 +85,6 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-    private fun getProjects(platformId: Int) {
-        val call = getClient().GetAllByPlatform(platformId)
-        call.enqueue(object : Callback<List<Project>> {
-            override fun onResponse(call: Call<List<Project>>, response: Response<List<Project>>) {
-                val projects = response.body()
-                (view!!.projectListRV.adapter as ProjectsAdapter).projects = projects!!.toTypedArray()
-            }
-
-            override fun onFailure(call: Call<List<Project>>, t: Throwable) {
-                Toast.makeText(
-                    this@HomeFragment.context,
-                    getString(R.string.connection_title),
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        })
-    }
-
-    //TODO Fix the nullpointer exception
     private fun getSortedProjects(quota: Int, platformId: Int) {
         val call = getClient().SortedBy(quota, platformId)
         call.enqueue(object : Callback<List<Project>> {
