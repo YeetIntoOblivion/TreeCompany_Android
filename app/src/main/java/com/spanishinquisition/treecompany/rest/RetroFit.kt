@@ -12,28 +12,24 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
-var base_url: String = "http://10.0.2.2:5000/"
+var base_url: String = "https://10.0.2.2:5001/"
 
 
 fun getClient(): ApiService {
-
-
     val gson = GsonBuilder()
         .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
         .create()
 
     val retrofit = Retrofit.Builder()
         .baseUrl(base_url)
-        .client(UnsafeOkHttpClient.getUnsafeOkHttpClient().build())
+        .client(UnsafeOkHttpClient.getUnsafeOkHttpClient())
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
     return retrofit.create(
         ApiService::class.java
     )
-
 }
-
 
 interface ApiService {
 
@@ -49,11 +45,15 @@ interface ApiService {
     //PROJECTCONTROLLER
     //Get all PROJECTS in a platform
     @GET("api/project/GetAllByPlatform")
-    fun GetAllByPlatform(@Query("platformId") id: Int): Call<List<Project>>
+    fun GetAllByPlatform(@Query("platformId") plaformId: Int): Call<List<Project>>
 
     //GET PROJECT BY ID
     @GET("api/project/GetById")
-    fun GetById(@Query("projectId") id: Int): Call<Project>
+    fun GetById(@Query("projectId") projectId: Int): Call<Project>
+
+    //GET SORTED PROJECTS
+    @GET("api/project/SortedBy")
+    fun SortedBy(@Query("quota") quota: Int, @Query("platformId") platformId: Int): Call<List<Project>>
 
     //TODO(put)
 
@@ -79,10 +79,3 @@ interface ApiService {
     @GET("api/module/GetIdeas")
     fun GetIdeas(@Query("id") id: Int): Call<List<Idea>>
 }
-
-
-/*
-                .client(UnsafeOkHttpClient.getUnsafeOkHttpClient().build())
-*/
-
-

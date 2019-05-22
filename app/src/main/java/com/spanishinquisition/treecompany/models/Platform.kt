@@ -5,6 +5,6 @@ data class Platform(
     val id: Int,
     val name: String,
     val url: String,
-    val owners: List<UimvcUser>,
-    val users: List<UimvcUser>
+    val owners: List<User>,
+    val users: List<User>
 )

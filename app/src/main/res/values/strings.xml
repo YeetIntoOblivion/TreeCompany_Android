@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TreeCompany</string>
+    <string name="app_name">City of Ideas</string>
     <string name="samen_werken_aan_een_ide_e_ale_wereld">Samen werken aan een ide(e)ale wereld</string>
     <string name="city_of_ideas">City of Ideas</string>
     <string name="copyright">© The Tree Company - 2019</string>
@@ -44,7 +44,6 @@
     <string name="connection_dialog_close">Afsluiten</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="home_fragment">IK BEN DE HOME FRAGMENT RAWR RAWR</string>
     <string name="settings_fragment">IK BEN DE INSTELLINGEN FRAGMENT HIE HIE</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -63,5 +62,14 @@
     <string name="project_list_filter_tv">Filter</string>
     <string name="project_list_projects_tv">Projecten</string>
     <string name="project_list_comments">#</string>
+    <string name="project_list_project_goal_tv">Project doel</string>
+
+    <string-array name="project_list_filter_array">
+        <item>Geen</item>
+        <item>Naam</item>
+        <item>Status</item>
+        <item>Likes</item>
+        <item>Reacties</item>
+    </string-array>
 
 </resources>

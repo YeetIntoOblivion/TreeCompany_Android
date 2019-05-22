@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.Idea
-import com.spanishinquisition.treecompany.models.Module
-import com.spanishinquisition.treecompany.models.projects.Project
 import kotlinx.android.synthetic.main.idea_list_item.view.*
 
 class IdeaAdapter(
