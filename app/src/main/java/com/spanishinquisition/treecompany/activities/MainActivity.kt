@@ -13,11 +13,10 @@ import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.IdeationAdapter
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
 import com.spanishinquisition.treecompany.fragments.*
-import com.spanishinquisition.treecompany.models.projects.Ideation
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
-    ProjectsAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener {
+    ProjectsAdapter.OnProjectSelectedListener/*, IdeationAdapter.OnIdeationSelectionListener*/ {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,19 +88,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onProjectSelected(projectId: Int) {
 
+        val moduleFragment = ModuleFragment()
+        moduleFragment.projectId = projectId
 
-        val ideationFragment = IdeationFragment()
-        val questionnaireFragment = QuestionnaireFragment()
-        ideationFragment.projectIndex = projectId
-        questionnaireFragment.projectIndex = projectId
-
-        supportFragmentManager.beginTransaction().replace(R.id.mainContent, ModuleFragment()).addToBackStack("")
+        supportFragmentManager.beginTransaction().replace(R.id.mainContent, moduleFragment).addToBackStack("")
             .commit()
     }
+/*
+    override fun onIdeationSelected(ideationId: Int) {
 
-    override fun onIdeationSelected(ideation: Ideation) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+        val ideationQuestionFragment = IdeationQuestionFragment()
+        ideationQuestionFragment.moduleId = ideationId
+
+        supportFragmentManager.beginTransaction().replace(R.id.mainContent, ideationQuestionFragment).addToBackStack("")
+            .commit()
+     }*/
 }
 
 

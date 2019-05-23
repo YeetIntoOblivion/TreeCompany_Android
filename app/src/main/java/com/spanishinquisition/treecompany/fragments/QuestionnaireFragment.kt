@@ -10,10 +10,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.spanishinquisition.treecompany.R
- import com.spanishinquisition.treecompany.adapters.QuestionnaireAdapter
- import com.spanishinquisition.treecompany.models.projects.Questionnaire
+import com.spanishinquisition.treecompany.adapters.QuestionnaireAdapter
+import com.spanishinquisition.treecompany.models.projects.Questionnaire
 import com.spanishinquisition.treecompany.rest.getClient
- import kotlinx.android.synthetic.main.fragment_questionnaire.view.*
+import kotlinx.android.synthetic.main.fragment_questionnaire.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,7 +25,7 @@ import retrofit2.Response
  */
 class QuestionnaireFragment : Fragment() {
 
-    var projectIndex: Int = 0;
+    var projectId: Int = 0;
 
 
     override fun onCreateView(
@@ -33,13 +33,17 @@ class QuestionnaireFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_questionnaire, container, false)
+        val view = inflater.inflate(R.layout.fragment_questionnaire, container, false)
 
         view.rvQuestionnaire.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = QuestionnaireAdapter(context/*, listener*/)
         }
-        GetQuestionnaires(projectIndex+1)
+
+
+        GetQuestionnaires(projectId)
+
+
 
         return view
     }

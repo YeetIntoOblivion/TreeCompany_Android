@@ -25,6 +25,8 @@ import retrofit2.Response
  */
 class IdeationQuestionFragment : Fragment() {
 
+    var moduleId: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

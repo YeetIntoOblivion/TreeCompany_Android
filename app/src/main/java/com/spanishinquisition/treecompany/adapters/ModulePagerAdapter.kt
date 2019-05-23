@@ -21,6 +21,8 @@ class ModulePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
 
+
+
         return mFragmentList.get(position)
     }
 

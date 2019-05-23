@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.IdeationQuestion
 import kotlinx.android.synthetic.main.ideationquestion_list_item.view.*
-import java.net.URL
 
 
 class IdeationQuestionAdapter(context: Context) :

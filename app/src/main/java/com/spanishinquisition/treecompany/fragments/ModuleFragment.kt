@@ -16,6 +16,8 @@ import com.spanishinquisition.treecompany.adapters.ModulePagerAdapter
 class ModuleFragment : Fragment() {
 
 
+    var projectId: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +28,23 @@ class ModuleFragment : Fragment() {
         setUpViewPager(viewpager)
         // Set Tabs inside Toolbar
         val tabs = view.findViewById<TabLayout>(R.id.tablayout)
+
+
         tabs.setupWithViewPager(viewpager)
+
+        /*       tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+                   override fun onTabSelected(tab: TabLayout.Tab?) {
+                       print(tab)
+                   }
+
+                   override fun onTabReselected(tab: TabLayout.Tab?) {
+                   }
+
+                   override fun onTabUnselected(tab: TabLayout.Tab?) {
+                   }
+               })*/
+
+
         viewpager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
 
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
@@ -34,10 +52,9 @@ class ModuleFragment : Fragment() {
         toolbar.setTitle("Tab-munu in een modules")
 
 
-
-      /*  val pageAdapter = ModulePagerAdapter(childFragmentManager)
-        //viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-        //   viewpager.setAdapter(pageAdapter)*/
+        /*  val pageAdapter = ModulePagerAdapter(childFragmentManager)
+          //viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+          //   viewpager.setAdapter(pageAdapter)*/
 
         return view;
     }
@@ -45,8 +62,21 @@ class ModuleFragment : Fragment() {
 
     private fun setUpViewPager(viewpager: ViewPager) {
         val adapter = ModulePagerAdapter(childFragmentManager);
-        adapter.addFragment(QuestionnaireFragment(), "Vragenlijst")
-        adapter.addFragment(IdeationFragment(), "Ideeen")
+
+      /*  var qFragment = QuestionnaireFragment()
+        var args = Bundle()
+        args.putInt("PROJECT_ID", projectId)
+
+        qFragment.arguments = args*/
+
+        val qFragment = QuestionnaireFragment()
+        val iFragment = IdeationFragment()
+        qFragment.projectId = projectId
+        iFragment.projectId = projectId
+
+
+        adapter.addFragment(qFragment, "Vragenlijst")
+        adapter.addFragment(iFragment, "Ideeen")
         viewpager.adapter = adapter
     }
 }

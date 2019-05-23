@@ -1,14 +1,14 @@
 package com.spanishinquisition.treecompany.fragments
 
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.IdeationAdapter
 import com.spanishinquisition.treecompany.models.projects.Ideation
@@ -25,11 +25,19 @@ import retrofit2.Response
  */
 class IdeationFragment : Fragment() {
 
-/*
-    private lateinit var listener: IdeationAdapter.OnIdeationSelectionListener
-*/
 
-    var projectIndex: Int = 0;
+   /* private lateinit var listener: IdeationAdapter.OnIdeationSelectionListener
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is IdeationAdapter.OnIdeationSelectionListener)
+            listener = context
+        else
+            throw RuntimeException("Parent context of IdeationFragment is incorrect")
+    }
+*/
+    var projectId: Int = 0;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +50,7 @@ class IdeationFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = IdeationAdapter(context/*, listener*/)
         }
-        GetIdeations(projectIndex + 1)
+        GetIdeations(projectId)
 
         return view
     }

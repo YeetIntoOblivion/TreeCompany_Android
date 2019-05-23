@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.Module
 import com.spanishinquisition.treecompany.models.projects.Questionnaire
-import kotlinx.android.synthetic.main.module_list_item.view.*
+import kotlinx.android.synthetic.main.questionnaire_list_item.view.*
 
 class QuestionnaireAdapter(context: Context):
     RecyclerView.Adapter<QuestionnaireAdapter.QuestionnaireViewHolder>() {

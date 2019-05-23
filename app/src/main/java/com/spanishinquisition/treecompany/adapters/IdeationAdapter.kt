@@ -10,14 +10,12 @@ import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.Ideation
 import com.spanishinquisition.treecompany.models.projects.Module
 import kotlinx.android.synthetic.main.ideation_list_item.view.*
-import kotlinx.android.synthetic.main.module_list_item.view.tvFbCount
-import kotlinx.android.synthetic.main.module_list_item.view.tvLikeCount
-import kotlinx.android.synthetic.main.module_list_item.view.tvTitel
-import kotlinx.android.synthetic.main.module_list_item.view.tvTwitterCount
 
 class IdeationAdapter(
     context: Context
-   /* private val listener: OnIdeationSelectionListener*/
+/*
+    private val listener: OnIdeationSelectionListener
+*/
 ) :
     RecyclerView.Adapter<IdeationAdapter.IdeationViewHolder>() {
 
@@ -56,12 +54,12 @@ class IdeationAdapter(
         vh.FbCount.text = ideations.fbLikeCount.toString()
         vh.TwitterCount.text = ideations.twitterLikeCount.toString()
 
-      /*  vh.itemView.setOnClickListener {
-            listener.onIdeationSelected(ideations)
+  /*      vh.itemView.setOnClickListener {
+            listener.onIdeationSelected(ideations.id)
         }*/
     }
 
-    interface OnIdeationSelectionListener {
-        fun onIdeationSelected(ideation: Ideation)
-    }
+   /* interface OnIdeationSelectionListener {
+        fun onIdeationSelected(ideationId: Int)
+    }*/
 }
