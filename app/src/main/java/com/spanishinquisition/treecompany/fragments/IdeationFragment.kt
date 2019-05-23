@@ -26,7 +26,7 @@ import retrofit2.Response
 class IdeationFragment : Fragment() {
 
 
-   /* private lateinit var listener: IdeationAdapter.OnIdeationSelectionListener
+    private lateinit var listener: IdeationAdapter.OnIdeationSelectionListener
 
 
     override fun onAttach(context: Context) {
@@ -36,7 +36,7 @@ class IdeationFragment : Fragment() {
         else
             throw RuntimeException("Parent context of IdeationFragment is incorrect")
     }
-*/
+
     var projectId: Int = 0;
 
     override fun onCreateView(
@@ -48,7 +48,7 @@ class IdeationFragment : Fragment() {
 
         view.rvIdeation.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = IdeationAdapter(context/*, listener*/)
+            adapter = IdeationAdapter(context, listener)
         }
         GetIdeations(projectId)
 

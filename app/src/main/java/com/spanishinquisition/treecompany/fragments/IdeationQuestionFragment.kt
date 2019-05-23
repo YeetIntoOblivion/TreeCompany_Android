@@ -38,7 +38,7 @@ class IdeationQuestionFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = IdeationQuestionAdapter(context/*, listener*/)
         }
-        GetIdeationQuestions(2)
+        GetIdeationQuestions(moduleId)
         return view
     }
 

@@ -16,7 +16,7 @@ import com.spanishinquisition.treecompany.fragments.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
-    ProjectsAdapter.OnProjectSelectedListener/*, IdeationAdapter.OnIdeationSelectionListener*/ {
+    ProjectsAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportFragmentManager.beginTransaction().replace(R.id.mainContent, moduleFragment).addToBackStack("")
             .commit()
     }
-/*
+
     override fun onIdeationSelected(ideationId: Int) {
 
         val ideationQuestionFragment = IdeationQuestionFragment()
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         supportFragmentManager.beginTransaction().replace(R.id.mainContent, ideationQuestionFragment).addToBackStack("")
             .commit()
-     }*/
+     }
 }
 
 
