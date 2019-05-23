@@ -42,6 +42,16 @@
     <string name="connection_msg">Geen verbinding, opnieuw proberen?</string>
     <string name="connection_dialog_retry">Opnieuw</string>
     <string name="connection_dialog_close">Afsluiten</string>
+    <string name="projecttitle">ProjectTitle</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="huidige_fase">Huidige Fase</string>
+    <string name="phasename">PhaseName</string>
+    <string name="progress">Progress</string>
+    <string name="start_van_het_project">Start van het project:</string>
+    <string name="einde_van_het_project">Einde van het project:</string>
+    <string name="dateformat">--/--/--</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="settings_fragment">IK BEN DE INSTELLINGEN FRAGMENT HIE HIE</string>
