@@ -11,7 +11,10 @@ import com.spanishinquisition.treecompany.models.projects.IdeationQuestion
 import kotlinx.android.synthetic.main.ideationquestion_list_item.view.*
 
 
-class IdeationQuestionAdapter(context: Context) :
+class IdeationQuestionAdapter(
+    context: Context,
+    private val listener: OnIdeationQuestionSelectionListener
+) :
     RecyclerView.Adapter<IdeationQuestionAdapter.IdeationQuestionViewHolder>() {
 
     class IdeationQuestionViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -47,13 +50,13 @@ class IdeationQuestionAdapter(context: Context) :
         vh.Description.text = ideationQuestions.description
         vh.SiteURL.text = ideationQuestions.siteUrl
 
-        /* vh.itemView.setOnClickListener {
-             IdeationQuestionSelectionListener.onIdeationQuestionSelected(ideationQuestions[index])
-         }*/
+        vh.itemView.setOnClickListener {
+            listener.onIdeationQuestionSelected(ideationQuestions.id)
+        }
     }
 
-    interface IdeationQuestionSelectionListener {
-        fun onIdeationQuestionSelected(ideationQuestion: IdeationQuestion)
+    interface OnIdeationQuestionSelectionListener {
+        fun onIdeationQuestionSelected(iQuestionId: Int)
     }
 
 }

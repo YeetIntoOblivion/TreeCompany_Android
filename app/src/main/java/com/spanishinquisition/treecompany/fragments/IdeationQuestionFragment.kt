@@ -1,6 +1,7 @@
 package com.spanishinquisition.treecompany.fragments
 
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,6 +26,18 @@ import retrofit2.Response
  */
 class IdeationQuestionFragment : Fragment() {
 
+
+    private lateinit var listener : IdeationQuestionAdapter.OnIdeationQuestionSelectionListener
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is IdeationQuestionAdapter.OnIdeationQuestionSelectionListener)
+            listener = context
+        else
+            throw RuntimeException("Parent context of IdeationQuestionFragment is incorrect")
+    }
+
     var moduleId: Int = 0
 
     override fun onCreateView(
@@ -36,9 +49,10 @@ class IdeationQuestionFragment : Fragment() {
 
         view.rvIdeationQuestions.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = IdeationQuestionAdapter(context/*, listener*/)
+            adapter = IdeationQuestionAdapter(context, listener)
         }
         GetIdeationQuestions(moduleId)
+
         return view
     }
 

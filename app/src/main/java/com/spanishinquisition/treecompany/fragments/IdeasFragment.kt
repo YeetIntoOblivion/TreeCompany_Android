@@ -27,7 +27,10 @@ import java.lang.Exception
 
 class IdeasFragment : Fragment() {
 
-    private lateinit var listener: IdeaAdapter.IdeaSelectionListener
+   // private lateinit var listener: IdeaAdapter.IdeaSelectionListener
+
+    var iQuestionId: Int = 0
+
 
 /*
     override fun onAttach(context: Context?) {
@@ -46,7 +49,7 @@ class IdeasFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ideas, container, false)
-        val call = getClient().GetIdeas(2)
+        val call = getClient().GetIdeas(iQuestionId)
 
         call.enqueue(object : Callback<List<Idea>> {
             override fun onResponse(call: Call<List<Idea>>, response: Response<List<Idea>>) {

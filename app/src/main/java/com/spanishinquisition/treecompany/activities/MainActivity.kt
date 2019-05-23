@@ -11,12 +11,14 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.IdeationAdapter
+import com.spanishinquisition.treecompany.adapters.IdeationQuestionAdapter
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
 import com.spanishinquisition.treecompany.fragments.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
-    ProjectsAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener {
+    ProjectsAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener,
+    IdeationQuestionAdapter.OnIdeationQuestionSelectionListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,6 +103,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         ideationQuestionFragment.moduleId = ideationId
 
         supportFragmentManager.beginTransaction().replace(R.id.mainContent, ideationQuestionFragment).addToBackStack("")
+            .commit()
+    }
+
+    override fun onIdeationQuestionSelected(iQuestionId: Int) {
+        val ideasFragment = IdeasFragment()
+        ideasFragment.iQuestionId = iQuestionId
+        supportFragmentManager.beginTransaction().replace(R.id.mainContent, ideasFragment).addToBackStack("")
             .commit()
      }
 }
