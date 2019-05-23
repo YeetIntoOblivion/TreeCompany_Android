@@ -42,7 +42,7 @@ class ProjectsAdapter(
     }
 
     interface OnProjectSelectedListener {
-        fun onProjectSelected(projectID: Int)
+        fun onProjectSelected(projectId: Int)
     }
 
 }

@@ -25,6 +25,9 @@ import retrofit2.Response
  */
 class QuestionnaireFragment : Fragment() {
 
+    var projectIndex: Int = 0;
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +39,7 @@ class QuestionnaireFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = QuestionnaireAdapter(context/*, listener*/)
         }
-        GetQuestionnaires(1)
+        GetQuestionnaires(projectIndex+1)
 
         return view
     }

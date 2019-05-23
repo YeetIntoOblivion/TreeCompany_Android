@@ -114,6 +114,7 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
         call.enqueue(object : Callback<List<Project>> {
             override fun onResponse(call: Call<List<Project>>, response: Response<List<Project>>) {
                 val projects = response.body()
+
                 (view!!.projectListRV.adapter as ProjectsAdapter).projects = projects!!.toTypedArray()
             }
 

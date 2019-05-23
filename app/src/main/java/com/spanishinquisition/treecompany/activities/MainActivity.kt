@@ -10,15 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
+import com.spanishinquisition.treecompany.adapters.IdeationAdapter
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
 import com.spanishinquisition.treecompany.fragments.*
-
-
-import com.spanishinquisition.treecompany.models.projects.Module
+import com.spanishinquisition.treecompany.models.projects.Ideation
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
-    ProjectsAdapter.OnProjectSelectedListener {
+    ProjectsAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_questionnaires -> {
                 switchFragments(IdeasFragment())
-                supportActionBar ?. setTitle (R.string.menu_questionnaires)
+                supportActionBar?.setTitle(R.string.menu_questionnaires)
             }
             R.id.nav_info -> {
                 // TODO maak een info fragment voor mij b!tch
@@ -86,10 +87,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fragmentTransaction.replace(R.id.mainContent, fragment).commit()
     }
 
-    override fun onProjectSelected(projectID: Int) {
+    override fun onProjectSelected(projectId: Int) {
 
-        //TODO()
 
+        val ideationFragment = IdeationFragment()
+        val questionnaireFragment = QuestionnaireFragment()
+        ideationFragment.projectIndex = projectId
+        questionnaireFragment.projectIndex = projectId
+
+        supportFragmentManager.beginTransaction().replace(R.id.mainContent, ModuleFragment()).addToBackStack("")
+            .commit()
+    }
+
+    override fun onIdeationSelected(ideation: Ideation) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
 

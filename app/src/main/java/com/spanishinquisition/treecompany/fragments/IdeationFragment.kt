@@ -25,6 +25,11 @@ import retrofit2.Response
  */
 class IdeationFragment : Fragment() {
 
+/*
+    private lateinit var listener: IdeationAdapter.OnIdeationSelectionListener
+*/
+
+    var projectIndex: Int = 0;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,16 +42,15 @@ class IdeationFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = IdeationAdapter(context/*, listener*/)
         }
-        GetIdeations(1)
+        GetIdeations(projectIndex + 1)
 
         return view
     }
 
-
     fun GetIdeations(projectId: Int) {
         val call = getClient().GetIdeations(projectId)
-
         call.enqueue(object : Callback<List<Ideation>> {
+
             override fun onResponse(call: Call<List<Ideation>>, response: Response<List<Ideation>>) {
                 val ideations = response.body()
                 (view!!.rvIdeation.adapter as IdeationAdapter).ideations =

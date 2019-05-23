@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.Ideation
@@ -16,7 +15,10 @@ import kotlinx.android.synthetic.main.module_list_item.view.tvLikeCount
 import kotlinx.android.synthetic.main.module_list_item.view.tvTitel
 import kotlinx.android.synthetic.main.module_list_item.view.tvTwitterCount
 
-class IdeationAdapter(context: Context) :
+class IdeationAdapter(
+    context: Context
+   /* private val listener: OnIdeationSelectionListener*/
+) :
     RecyclerView.Adapter<IdeationAdapter.IdeationViewHolder>() {
 
     class IdeationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -54,13 +56,12 @@ class IdeationAdapter(context: Context) :
         vh.FbCount.text = ideations.fbLikeCount.toString()
         vh.TwitterCount.text = ideations.twitterLikeCount.toString()
 
-        /* vh.itemView.setOnClickListener {
-             moduleSelectionListener.onModuleSelected(ideations[index])
-         }*/
+      /*  vh.itemView.setOnClickListener {
+            listener.onIdeationSelected(ideations)
+        }*/
     }
 
-    interface IdeationSelectionListener {
-        fun onIdeationSelected(module: Module)
+    interface OnIdeationSelectionListener {
+        fun onIdeationSelected(ideation: Ideation)
     }
-
 }
