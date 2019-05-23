@@ -48,7 +48,7 @@ class IdeationFragment : Fragment() {
 
         view.rvIdeation.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = IdeationAdapter(context, listener)
+            adapter = IdeationAdapter(/*context,*/ listener)
         }
         GetIdeations(projectId)
 
