@@ -73,6 +73,13 @@ interface ApiService {
     @GET("api/module/GetModuleForPhase")
     fun GetModuleForPhase(@Query("phaseId") phaseId: Int): Call<Module>
 
+
+    @GET("api/module/GetIdeations")
+    fun GetIdeations(@Query("projectId") projectId:Int): Call<List<Ideation>>
+
+
+    @GET("api/module/GetQuestionnaires")
+    fun GetQuestionnaires(@Query("projectId") projectId:Int): Call<List<Questionnaire>>
     // TODO() POST AND PUT
 
 

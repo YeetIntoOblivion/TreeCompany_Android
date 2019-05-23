@@ -1,11 +1,10 @@
 package com.spanishinquisition.treecompany.adapters
 
-
-
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.spanishinquisition.treecompany.fragments.IdeasFragment
+import com.spanishinquisition.treecompany.fragments.IdeationFragment
 import com.spanishinquisition.treecompany.fragments.QuestionnaireFragment
 
 
@@ -16,32 +15,26 @@ import com.spanishinquisition.treecompany.fragments.QuestionnaireFragment
 @Suppress("DEPRECATION")
 class ModulePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
+    val mFragmentList = ArrayList<Fragment>()
+    val mFragmentTitleList = ArrayList<String>()
+
+
     override fun getItem(position: Int): Fragment {
 
-        return when (position) {
-            0 -> {
-                QuestionnaireFragment()
-            }
-            else -> {
-                return IdeasFragment()
-            }
-        }
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        //return PlaceholderFragment.newInstance(position + 1)
-    }
-
-    override fun getPageTitle(position: Int): CharSequence? {
-
-        return when (position) {
-            0 -> "vragenlijst"
-            else -> {
-                return "ideeen"
-            }
-        }
+        return mFragmentList.get(position)
     }
 
     override fun getCount(): Int {
-        return 2
+        return mFragmentList.size
     }
+
+    fun addFragment(fm: Fragment, title:String){
+        mFragmentList.add(fm);
+        mFragmentTitleList.add(title);
+    }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return mFragmentTitleList.get(position);
+    }
+
 }

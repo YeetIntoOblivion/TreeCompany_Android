@@ -4,8 +4,8 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   tools:context=".fragments.QuestionnaireFragment">
+                                                   tools:context=".fragments.IdeationFragment">
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/rvQuestionnaire"/>
+            android:layout_height="match_parent" android:id="@+id/rvIdeation"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

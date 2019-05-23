@@ -15,7 +15,6 @@ import com.spanishinquisition.treecompany.fragments.HomeFragment
 import com.spanishinquisition.treecompany.fragments.ModuleFragment
 
 
-import com.spanishinquisition.treecompany.fragments.SettingsFragment
 import com.spanishinquisition.treecompany.models.projects.Module
 
 
@@ -66,8 +65,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_ideations)
             }
             R.id.nav_questionnaires -> {
-                // TODO maak een vragenlijst fragment voor mij b!tch
-                supportActionBar?.setTitle(R.string.menu_questionnaires)
+                switchFragments(QuestionnaireFragment())
+                supportActionBar ?. setTitle (R.string.menu_questionnaires)
             }
             R.id.nav_info -> {
                 // TODO maak een info fragment voor mij b!tch
