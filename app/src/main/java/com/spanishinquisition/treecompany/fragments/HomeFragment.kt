@@ -86,7 +86,7 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
     private fun getSortedProjects(quota: Int, platformId: Int) {
-        val call = getClient().SortedBy(quota, platformId)
+        val call = getClient().sortedBy(quota, platformId)
         call.enqueue(object : Callback<List<Project>> {
             override fun onResponse(call: Call<List<Project>>, response: Response<List<Project>>) {
                 val projects = response.body()
@@ -96,7 +96,7 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
             override fun onFailure(call: Call<List<Project>>, t: Throwable) {
                 Toast.makeText(
                     this@HomeFragment.context,
-                    getString(R.string.connection_title),
+                    getString(R.string.dialog_connection_title),
                     Toast.LENGTH_LONG
                 ).show()
             }

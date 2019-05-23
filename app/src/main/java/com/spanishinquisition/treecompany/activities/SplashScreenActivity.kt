@@ -8,18 +8,25 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.spanishinquisition.treecompany.R
+import com.spanishinquisition.treecompany.models.Platform
 import com.spanishinquisition.treecompany.rest.SplashConnection
+import com.spanishinquisition.treecompany.rest.getClient
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlin.random.Random
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SplashScreenActivity : Activity() {
     private lateinit var loadingTv: TextView
     private lateinit var imageHome: ImageView
     private lateinit var localhostSubscription: Disposable
+    private lateinit var platformItems: Array<Platform>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,25 +73,65 @@ class SplashScreenActivity : Activity() {
 
     private fun verifyContact(isConnected: Boolean) {
         if (isConnected) {
+            getPlatforms()
+            getPrefPlatform()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         } else {
-            showAlertDialog(this, R.string.connection_title, R.string.connection_msg)
+            showConnectionFailedDialog()
         }
     }
 
-    private fun showAlertDialog(context: Context, title: Int, message: Int) {
-        val builder: AlertDialog.Builder = context.let {
+    private fun getPrefPlatform() {
+        val firstTime = getPreferences(Context.MODE_PRIVATE).getBoolean(getString(R.string.pref_platform_id), true)
+        if (firstTime) {
+            setPrefPlatformDialog()
+            getPreferences(Context.MODE_PRIVATE).edit().putBoolean(getString(R.string.pref_platform_id), false).apply()
+        }
+    }
+
+    private fun setPrefPlatformDialog() {
+        val builder: AlertDialog.Builder = this.let {
             AlertDialog.Builder(it)
         }
         builder.apply {
-            setMessage(message)
-            setTitle(title)
-            setPositiveButton(R.string.connection_dialog_retry) { _, _ -> contactBackEnd() }
-            setNegativeButton(R.string.connection_dialog_close) { _, _ -> finish() }
+            setTitle(R.string.dialog_platform_pref_title)
+            //TODO MAAK DIT AF
+//            setItems()
             setCancelable(false)
         }
         builder.create().show()
+    }
+
+    private fun showConnectionFailedDialog() {
+        val builder: AlertDialog.Builder = this.let {
+            AlertDialog.Builder(it)
+        }
+        builder.apply {
+            setMessage(R.string.dialog_connection_msg)
+            setTitle(R.string.dialog_connection_title)
+            setPositiveButton(R.string.dialog_connection_retry) { _, _ -> contactBackEnd() }
+            setNegativeButton(R.string.dialog_connection_shutdown) { _, _ -> finish() }
+            setCancelable(false)
+        }
+        builder.create().show()
+    }
+
+    private fun getPlatforms() {
+        val call = getClient().getPlatforms()
+        call.enqueue(object : Callback<List<Platform>> {
+            override fun onResponse(call: Call<List<Platform>>, response: Response<List<Platform>>) {
+                platformItems = response.body()!!.toTypedArray()
+            }
+
+            override fun onFailure(call: Call<List<Platform>>, t: Throwable) {
+                Toast.makeText(
+                    this@SplashScreenActivity,
+                    getString(R.string.dialog_connection_title),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
     }
 
     override fun onStop() {

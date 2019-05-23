@@ -1,5 +1,6 @@
 package com.spanishinquisition.treecompany.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -66,8 +67,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_questionnaires)
             }
             R.id.nav_info -> {
-                // TODO maak een info fragment voor mij b!tch
-                supportActionBar?.setTitle(R.string.menu_info)
+//                // TODO maak een info fragment voor mij b!tch
+//                supportActionBar?.setTitle(R.string.menu_info)
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_settings -> {
                 switchFragments(SettingsFragment())
@@ -86,5 +89,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onProjectSelected(project: Project) {
         TODO("not implemented")
+    }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
     }
 }

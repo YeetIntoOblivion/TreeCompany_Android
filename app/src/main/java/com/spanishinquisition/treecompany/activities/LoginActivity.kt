@@ -1,5 +1,6 @@
 package com.spanishinquisition.treecompany.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -29,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.loginBtn)
         loginGoogleBtn = findViewById(R.id.loginGoogleBtn)
         loginMicrosoftBtn = findViewById(R.id.loginMicrosoftBtn)
+        loginRegisterBtn = findViewById(R.id.loginRegisterBtn)
     }
 
     private fun addEventHandlers() {
@@ -37,6 +39,12 @@ class LoginActivity : AppCompatActivity() {
         }
         loginBtn.setOnClickListener{
 
+        }
+
+        loginRegisterBtn.setOnClickListener{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
