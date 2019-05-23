@@ -11,8 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
-import com.spanishinquisition.treecompany.fragments.HomeFragment
-import com.spanishinquisition.treecompany.fragments.ModuleFragment
+import com.spanishinquisition.treecompany.fragments.*
 
 
 import com.spanishinquisition.treecompany.models.projects.Module
@@ -65,7 +64,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_ideations)
             }
             R.id.nav_questionnaires -> {
-                switchFragments(QuestionnaireFragment())
+                switchFragments(IdeasFragment())
                 supportActionBar ?. setTitle (R.string.menu_questionnaires)
             }
             R.id.nav_info -> {

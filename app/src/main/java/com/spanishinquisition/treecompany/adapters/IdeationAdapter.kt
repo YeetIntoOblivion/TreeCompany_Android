@@ -5,11 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.Ideation
 import com.spanishinquisition.treecompany.models.projects.Module
- import kotlinx.android.synthetic.main.module_list_item.view.*
+import kotlinx.android.synthetic.main.ideation_list_item.view.*
+import kotlinx.android.synthetic.main.module_list_item.view.tvFbCount
+import kotlinx.android.synthetic.main.module_list_item.view.tvLikeCount
+import kotlinx.android.synthetic.main.module_list_item.view.tvTitel
+import kotlinx.android.synthetic.main.module_list_item.view.tvTwitterCount
 
 class IdeationAdapter(context: Context) :
     RecyclerView.Adapter<IdeationAdapter.IdeationViewHolder>() {
@@ -17,6 +22,7 @@ class IdeationAdapter(context: Context) :
     class IdeationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val Titel: TextView = view.tvTitel
+        val ExtraInfo: TextView = view.tvExtraInfo
         val LikeCount: TextView = view.tvLikeCount
         val FbCount: TextView = view.tvFbCount
         val TwitterCount: TextView = view.tvTwitterCount
@@ -43,6 +49,7 @@ class IdeationAdapter(context: Context) :
     override fun onBindViewHolder(vh: IdeationViewHolder, index: Int) {
         val ideations = ideations[index]
         vh.Titel.text = ideations.title
+        vh.ExtraInfo.text = ideations.extraInfo
         vh.LikeCount.text = ideations.likeCount.toString()
         vh.FbCount.text = ideations.fbLikeCount.toString()
         vh.TwitterCount.text = ideations.twitterLikeCount.toString()

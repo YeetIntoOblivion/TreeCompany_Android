@@ -72,4 +72,8 @@
         <item>Reacties</item>
     </string-array>
 
+    <string name="ideation_title">Ideationnaam</string>
+    <string name="ideation_uitleg">Meer info</string>
+
+
 </resources>

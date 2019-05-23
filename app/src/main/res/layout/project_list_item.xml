@@ -67,7 +67,7 @@ android:background="@color/colorCard">
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/guideline" app:layout_constraintGuide_percent=".5"/>
+                android:id="@+id/guideline" app:layout_constraintGuide_begin="206dp"/>
         <TextView
                 android:text="@string/project_list_likes"
                 android:layout_width="wrap_content"

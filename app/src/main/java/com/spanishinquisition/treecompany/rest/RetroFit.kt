@@ -3,10 +3,7 @@ package com.spanishinquisition.treecompany.rest
 import com.google.gson.GsonBuilder
 import com.spanishinquisition.treecompany.models.Idea
 import com.spanishinquisition.treecompany.models.User
-import com.spanishinquisition.treecompany.models.projects.Ideation
-import com.spanishinquisition.treecompany.models.projects.Module
-import com.spanishinquisition.treecompany.models.projects.Project
-import com.spanishinquisition.treecompany.models.projects.Questionnaire
+import com.spanishinquisition.treecompany.models.projects.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -84,5 +81,11 @@ interface ApiService {
 
 
     @GET("api/module/GetIdeas")
-    fun GetIdeas(@Query("questionId") questionId: Int): Call<List<Idea>>
+    fun GetIdeas(@Query("ideationQuestionId") ideationQuestionId: Int): Call<List<Idea>>
+
+
+    @GET("api/module/GetIdeationQuestions")
+    fun GetIdeationQuestions(@Query("moduleId") moduleId: Int): Call<List<IdeationQuestion>>
+
+
 }
