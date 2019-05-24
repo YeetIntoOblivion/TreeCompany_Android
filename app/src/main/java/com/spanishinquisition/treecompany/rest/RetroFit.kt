@@ -1,5 +1,7 @@
 package com.spanishinquisition.treecompany.rest
 
+import android.content.Context
+import android.net.ConnectivityManager
 import com.google.gson.GsonBuilder
 import com.spanishinquisition.treecompany.models.Idea
 import com.spanishinquisition.treecompany.models.Platform
@@ -7,14 +9,15 @@ import com.spanishinquisition.treecompany.models.projects.Ideation
 import com.spanishinquisition.treecompany.models.projects.Module
 import com.spanishinquisition.treecompany.models.projects.Project
 import com.spanishinquisition.treecompany.models.projects.Questionnaire
+import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
+import java.io.IOException
 
-var base_url: String = "https://10.0.2.2:5001/"
-
+var BASE_URL: String = "https://10.0.2.2:5001/"
 
 fun getClient(): ApiService {
     val gson = GsonBuilder()
@@ -22,7 +25,7 @@ fun getClient(): ApiService {
         .create()
 
     val retrofit = Retrofit.Builder()
-        .baseUrl(base_url)
+        .baseUrl(BASE_URL)
         .client(UnsafeOkHttpClient.getUnsafeOkHttpClient())
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
@@ -70,4 +73,24 @@ interface ApiService {
 
     @GET("api/module/GetIdeas")
     fun getIdeas(@Query("id") id: Int): Call<List<Idea>>
+}
+
+fun isConnectedToServer(context: Context): Boolean {
+    val connMgr = context.getSystemService(
+        Context.CONNECTIVITY_SERVICE
+    ) as ConnectivityManager
+    val networkInfo = connMgr.activeNetworkInfo
+    if (networkInfo != null && networkInfo.isConnected) {
+        try {
+            val request = Request.Builder()
+                .url(BASE_URL)
+                .build()
+
+            val client = UnsafeOkHttpClient.getUnsafeOkHttpClient()
+            return client.newCall(request).execute().isSuccessful
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+    return false
 }

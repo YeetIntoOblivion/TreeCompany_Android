@@ -18,6 +18,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSelectedListener {
+    private lateinit var firstTimeExplain: TextView
     private lateinit var firstTimeRV: RecyclerView
     private lateinit var firstTimeCurrentSelection: TextView
     private lateinit var firstTimeAcceptBtn: Button
@@ -28,10 +29,12 @@ class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSe
         initialiseViews()
         addEventHandlers()
         getPlatforms()
+        switchText()
     }
 
     private fun initialiseViews() {
         firstTimeRV = findViewById(R.id.firstTimeRV)
+        firstTimeExplain = findViewById(R.id.firstTimeExplain)
         firstTimeCurrentSelection = findViewById(R.id.firstTimeCurrentSelection)
         firstTimeRV.apply {
             layoutManager = LinearLayoutManager(this@ChoosePlatformActivity)
@@ -46,7 +49,6 @@ class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSe
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
-
     }
 
     private fun getPlatforms() {
@@ -67,8 +69,21 @@ class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSe
         })
     }
 
+    private fun switchText() {
+        val firstTime = getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).getBoolean(getString(R.string.pref_platform), true)
+        if (!firstTime) {
+            firstTimeExplain.text = getString(R.string.x_time_selection)
+            val platformName = getSharedPreferences(
+                getString(R.string.app_pref),
+                Context.MODE_PRIVATE
+            ).getString(getString(R.string.pref_platform_name), null)
+            firstTimeCurrentSelection.text = getString(R.string.first_time_selection_item, platformName)
+        }
+    }
+
     override fun onPlatformSelected(platform: Platform) {
         getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).edit().putInt(getString(R.string.pref_platform_id),platform.id).apply()
+        getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).edit().putString(getString(R.string.pref_platform_name),platform.name).apply()
         firstTimeCurrentSelection.text = getString(R.string.first_time_selection_item, platform.name)
     }
 }

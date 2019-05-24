@@ -41,9 +41,6 @@
     <string name="dialog_connection_retry">Opnieuw</string>
     <string name="dialog_connection_shutdown">Afsluiten</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="settings_fragment">IK BEN DE INSTELLINGEN FRAGMENT HIE HIE</string>
-
     <string name="stem">Stemmen</string>
     <string name="reageer">Reageren</string>
 
@@ -78,5 +75,8 @@
     <string name="first_time_selection">Huidige selectie: geen</string>
     <string name="first_time_selection_item">Huidige selectie: %1$s</string>
     <string name="app_pref">app_pref</string>
+    <string name="x_time_selection">Verander hier je platform.</string>
+    <string name="pref_platform_name">pref_platform_name</string>
+    <string name="change_platform">Platform veranderen</string>
 
 </resources>
