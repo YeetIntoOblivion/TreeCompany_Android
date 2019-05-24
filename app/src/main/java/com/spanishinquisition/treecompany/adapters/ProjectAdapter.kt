@@ -9,7 +9,7 @@ import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.Project
 import kotlinx.android.synthetic.main.project_list_item.view.*
 
-class ProjectsAdapter(
+class ProjectAdapter(
     private val listener: OnProjectSelectedListener
 ) : RecyclerView.Adapter<ProjectViewHolder>() {
 

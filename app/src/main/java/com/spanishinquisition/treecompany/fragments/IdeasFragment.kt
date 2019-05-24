@@ -50,7 +50,7 @@ class IdeasFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ideas, container, false)
-        val call = getClient().GetIdeas(1)
+        val call = getClient().getIdeas(1)
 
         call.enqueue(object : Callback<List<Idea>> {
             override fun onResponse(call: Call<List<Idea>>, response: Response<List<Idea>>) {

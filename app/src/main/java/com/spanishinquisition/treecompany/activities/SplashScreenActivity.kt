@@ -9,7 +9,7 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.spanishinquisition.treecompany.R
-import com.spanishinquisition.treecompany.rest.SplashConnection
+import com.spanishinquisition.treecompany.rest.isConnectedToServer
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -53,7 +53,7 @@ class SplashScreenActivity : Activity() {
 
     private fun contactBackEnd() {
         val observable = Observable.create<Boolean> { emitter ->
-            emitter.onNext(SplashConnection(this).isConnectedToServer())
+            emitter.onNext(isConnectedToServer(this))
         }
 
         localhostSubscription = observable
@@ -66,22 +66,27 @@ class SplashScreenActivity : Activity() {
 
     private fun verifyContact(isConnected: Boolean) {
         if (isConnected) {
-            startActivity(Intent(this, MainActivity::class.java))
+            val firstTime = getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).getBoolean(getString(R.string.pref_platform), true)
+
+            if (firstTime)
+                startActivity(Intent(this, ChoosePlatformActivity::class.java))
+            else
+                startActivity(Intent(this, MainActivity::class.java))
             finish()
         } else {
-            showAlertDialog(this, R.string.connection_title, R.string.connection_msg)
+            showConnectionFailedDialog()
         }
     }
 
-    private fun showAlertDialog(context: Context, title: Int, message: Int) {
-        val builder: AlertDialog.Builder = context.let {
+    private fun showConnectionFailedDialog() {
+        val builder: AlertDialog.Builder = this.let {
             AlertDialog.Builder(it)
         }
         builder.apply {
-            setMessage(message)
-            setTitle(title)
-            setPositiveButton(R.string.connection_dialog_retry) { _, _ -> contactBackEnd() }
-            setNegativeButton(R.string.connection_dialog_close) { _, _ -> finish() }
+            setMessage(R.string.dialog_connection_msg)
+            setTitle(R.string.dialog_connection_title)
+            setPositiveButton(R.string.dialog_connection_retry) { _, _ -> contactBackEnd() }
+            setNegativeButton(R.string.dialog_connection_shutdown) { _, _ -> finish() }
             setCancelable(false)
         }
         builder.create().show()
