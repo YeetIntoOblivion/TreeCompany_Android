@@ -41,6 +41,7 @@ class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSe
             adapter = PlatformAdapter(this@ChoosePlatformActivity)
         }
         firstTimeAcceptBtn = findViewById(R.id.firstTimeAcceptBtn)
+        firstTimeAcceptBtn.isEnabled = false
     }
 
     private fun addEventHandlers() {
@@ -85,5 +86,6 @@ class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSe
         getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).edit().putInt(getString(R.string.pref_platform_id),platform.id).apply()
         getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).edit().putString(getString(R.string.pref_platform_name),platform.name).apply()
         firstTimeCurrentSelection.text = getString(R.string.first_time_selection_item, platform.name)
+        firstTimeAcceptBtn.isEnabled = true
     }
 }
