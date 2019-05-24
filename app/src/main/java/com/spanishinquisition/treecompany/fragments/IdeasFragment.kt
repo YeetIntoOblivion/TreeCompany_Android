@@ -27,7 +27,7 @@ import java.lang.Exception
 
 class IdeasFragment : Fragment() {
 
-   // private lateinit var listener: IdeaAdapter.IdeaSelectionListener
+    // private lateinit var listener: IdeaAdapter.IdeaSelectionListener
 
     var iQuestionId: Int = 0
 
@@ -49,6 +49,16 @@ class IdeasFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ideas, container, false)
+        view.findViewById<RecyclerView>(R.id.rvIdeas).apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = IdeaAdapter(context/*, listener*/)
+        }
+        getIdeas(iQuestionId)
+        return view
+    }
+
+
+    fun getIdeas(iQuestionId: Int) {
         val call = getClient().GetIdeas(iQuestionId)
 
         call.enqueue(object : Callback<List<Idea>> {
@@ -58,16 +68,13 @@ class IdeasFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<Idea>>, t: Throwable) {
-                throw Exception(t)
+                Toast.makeText(
+                    this@IdeasFragment.context,
+                    getString(R.string.connection_title),
+                    Toast.LENGTH_LONG
+                ).show()
             }
         })
-
-        view.findViewById<RecyclerView>(R.id.rvIdeas).apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = IdeaAdapter(context/*, listener*/)
-        }
-
-        return view
     }
 }
 

@@ -9,7 +9,7 @@
                                                    android:background="@color/white">
 
     <TextView
-            android:text="ideation"
+            android:text="@string/ideation_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tvTitel" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
@@ -19,7 +19,7 @@
             android:textSize="18sp"/>
 
     <TextView
-            android:text="@string/ideation_uitleg"
+            android:text="@string/meer_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvExtraInfo" android:layout_marginTop="28dp"
@@ -35,7 +35,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvExtraInfo">
 
         <TextView
-                android:text="TextView"
+                android:text="@string/fb_likes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvFbCount"
@@ -44,7 +44,7 @@
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 android:layout_marginEnd="8dp"/>
         <TextView
-                android:text="TextView"
+                android:text="@string/twitter_likes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvTwitterCount"
@@ -54,7 +54,7 @@
                 android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/guideline3"
                 android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
         <TextView
-                android:text="TextView"
+                android:text="@string/like_count"
                 android:layout_width="104dp"
                 android:layout_height="18dp"
                 android:id="@+id/tvLikeCount"

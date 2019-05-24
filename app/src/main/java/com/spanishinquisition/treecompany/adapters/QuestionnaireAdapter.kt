@@ -11,7 +11,7 @@ import com.spanishinquisition.treecompany.models.projects.Module
 import com.spanishinquisition.treecompany.models.projects.Questionnaire
 import kotlinx.android.synthetic.main.questionnaire_list_item.view.*
 
-class QuestionnaireAdapter(context: Context):
+class QuestionnaireAdapter(/*context: Context*/):
     RecyclerView.Adapter<QuestionnaireAdapter.QuestionnaireViewHolder>() {
 
     class QuestionnaireViewHolder(view: View) : RecyclerView.ViewHolder(view) {

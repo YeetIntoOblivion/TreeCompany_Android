@@ -22,14 +22,14 @@
                 android:id="@+id/tabChats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="vragenlijst"/>
+                android:text="@string/questionnaire_title"/>
 
         <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabStatus"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ideeën"/>
+                android:text="@string/ideas_title"/>
 
     </com.google.android.material.tabs.TabLayout>
 

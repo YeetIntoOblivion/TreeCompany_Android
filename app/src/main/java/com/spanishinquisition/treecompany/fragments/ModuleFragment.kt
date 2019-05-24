@@ -29,32 +29,13 @@ class ModuleFragment : Fragment() {
         // Set Tabs inside Toolbar
         val tabs = view.findViewById<TabLayout>(R.id.tablayout)
 
-
         tabs.setupWithViewPager(viewpager)
-
-        /*       tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
-                   override fun onTabSelected(tab: TabLayout.Tab?) {
-                       print(tab)
-                   }
-
-                   override fun onTabReselected(tab: TabLayout.Tab?) {
-                   }
-
-                   override fun onTabUnselected(tab: TabLayout.Tab?) {
-                   }
-               })*/
-
 
         viewpager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
 
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
 
-        toolbar.setTitle("Tab-munu in een modules")
-
-
-        /*  val pageAdapter = ModulePagerAdapter(childFragmentManager)
-          //viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-          //   viewpager.setAdapter(pageAdapter)*/
+        toolbar.setTitle("Vragenlijsten & Ideations")
 
         return view;
     }
@@ -62,13 +43,6 @@ class ModuleFragment : Fragment() {
 
     private fun setUpViewPager(viewpager: ViewPager) {
         val adapter = ModulePagerAdapter(childFragmentManager);
-
-      /*  var qFragment = QuestionnaireFragment()
-        var args = Bundle()
-        args.putInt("PROJECT_ID", projectId)
-
-        qFragment.arguments = args*/
-
         val qFragment = QuestionnaireFragment()
         val iFragment = IdeationFragment()
         qFragment.projectId = projectId

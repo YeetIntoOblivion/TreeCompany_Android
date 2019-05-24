@@ -37,7 +37,7 @@ class QuestionnaireFragment : Fragment() {
 
         view.rvQuestionnaire.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = QuestionnaireAdapter(context/*, listener*/)
+            adapter = QuestionnaireAdapter(/*context*//*, listener*/)
         }
 
 

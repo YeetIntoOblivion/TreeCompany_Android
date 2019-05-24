@@ -72,8 +72,23 @@
         <item>Reacties</item>
     </string-array>
 
-    <string name="ideation_title">Ideationnaam</string>
-    <string name="ideation_uitleg">Meer info</string>
+
+    <string name="questionnaire_title">Vragenlijst</string>
+    <string name="ideas_title">Ideeën</string>
+    <string name="fb_likes">Fb-likes</string>
+    <string name="twitter_likes">Twitter-likes</string>
+    <string name="like_count">Likes</string>
+
+    <string name="ideation_title">Ideation</string>
+    <string name="meer_info">Meer info</string>
+
+
+    <string name="iQuestion_title">Centrale Vraag</string>
+    <string name="GotIdeas_button">Ga naar ideeën</string>
+    <string name="url">URL</string>
+
+
+    <string name="idea_title">Idee</string>
 
 
 </resources>
