@@ -8,15 +8,12 @@
     <string-array name="loadingScreen">
         <item>Jouw ideeën zijn goud waard!</item>
         <item>Samen werken aan een ide(e)ale wereld!</item>
-
     </string-array>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="login_email">Email</string>
     <string name="password">Wachtwoord</string>
     <string name="login_btn">Login</string>
-    <string name="startup_register_btn">Nog geen account? Registreer hier!</string>
+    <string name="startup_register_btn">Registreren</string>
     <string name="forgot_password_btn">Wachtwoord vergeten?</string>
     <string name="login_google_btn">Google</string>
     <string name="login_microsoft_btn">Microsoft</string>
@@ -24,6 +21,7 @@
     <string name="register_name">Naam</string>
     <string name="confirm_password">Bevestig wachtwoord</string>
     <string name="birthday">Geboortedatum</string>
+
     <string name="title_activity_main">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -42,10 +40,8 @@
     <string name="connection_msg">Geen verbinding, opnieuw proberen?</string>
     <string name="connection_dialog_retry">Opnieuw</string>
     <string name="connection_dialog_close">Afsluiten</string>
+    
     <string name="projecttitle">ProjectTitle</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="huidige_fase">Huidige Fase</string>
     <string name="phasename">PhaseName</string>
     <string name="progress">Progress</string>
@@ -53,16 +49,11 @@
     <string name="einde_van_het_project">Einde van het project:</string>
     <string name="dateformat">--/--/--</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="settings_fragment">IK BEN DE INSTELLINGEN FRAGMENT HIE HIE</string>
-
-
     <string name="stem">Stemmen</string>
     <string name="reageer">Reageren</string>
 
     <string name="project_list_current_fase_tv">Laatste fase:</string>
     <string name="project_list_project_name_tv">Projectnaam</string>
-    <string name="project_list_project_img_dsc">Project afbeelding</string>
     <string name="project_list_project_status_tv">Project status</string>
     <string name="project_list_likes">#</string>
     <string name="project_list_shares">#</string>
@@ -79,5 +70,21 @@
         <item>Likes</item>
         <item>Reacties</item>
     </string-array>
+
+    <string name="pref_platform">pref_platform</string>
+    <string name="pref_platform_id">pref_platform_id</string>
+    <string name="first_time_title">Welkom bij City of Ideas!</string>
+    <string name="first_time_explain">Dit is de eerste keer dat je de app opent en daarom vragen we je om eerst het
+        platform van jouw gemeente te kiezen. Zou je later toch van platform willen veranderen dan kan je dat veranderen
+        bij de instellingen van deze app.
+    </string>
+    <string name="first_time_accept_btn">Accepteren</string>
+    <string name="platform_name">Platformnaam</string>
+    <string name="first_time_selection">Huidige selectie: geen</string>
+    <string name="first_time_selection_item">Huidige selectie: %1$s</string>
+    <string name="app_pref">app_pref</string>
+    <string name="x_time_selection">Verander hier je platform.</string>
+    <string name="pref_platform_name">pref_platform_name</string>
+    <string name="change_platform">Platform veranderen</string>
 
 </resources>
