@@ -11,14 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
-import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
+import com.spanishinquisition.treecompany.adapters.ProjectAdapter
 import com.spanishinquisition.treecompany.fragments.HomeFragment
 import com.spanishinquisition.treecompany.fragments.IdeasFragment
 
 import com.spanishinquisition.treecompany.fragments.SettingsFragment
 import com.spanishinquisition.treecompany.models.projects.Project
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ProjectsAdapter.OnProjectSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ProjectAdapter.OnProjectSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -89,13 +89,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onProjectSelected(project: Project) {
         TODO("not implemented")
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onStop() {
-        super.onStop()
     }
 }

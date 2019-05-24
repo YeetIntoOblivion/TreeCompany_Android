@@ -66,7 +66,7 @@ class SplashScreenActivity : Activity() {
 
     private fun verifyContact(isConnected: Boolean) {
         if (isConnected) {
-            val firstTime = getPreferences(Context.MODE_PRIVATE).getBoolean(getString(R.string.pref_platform_id), true)
+            val firstTime = getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).getBoolean(getString(R.string.pref_platform), true)
 
             if (firstTime)
                 startActivity(Intent(this, ChoosePlatformActivity::class.java))

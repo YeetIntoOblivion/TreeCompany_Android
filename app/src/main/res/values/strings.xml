@@ -66,7 +66,17 @@
         <item>Reacties</item>
     </string-array>
 
+    <string name="pref_platform">pref_platform</string>
     <string name="pref_platform_id">pref_platform_id</string>
-    <string name="dialog_platform_pref_title">Kies je platform:</string>
+    <string name="first_time_title">Welkom bij City of Ideas!</string>
+    <string name="first_time_explain">Dit is de eerste keer dat je de app opent en daarom vragen we je om eerst het
+        platform van jouw gemeente te kiezen. Zou je later toch van platform willen veranderen dan kan je dat veranderen
+        bij de instellingen van deze app.
+    </string>
+    <string name="first_time_accept_btn">Accepteren</string>
+    <string name="platform_name">Platformnaam</string>
+    <string name="first_time_selection">Huidige selectie: geen</string>
+    <string name="first_time_selection_item">Huidige selectie: %1$s</string>
+    <string name="app_pref">app_pref</string>
 
 </resources>

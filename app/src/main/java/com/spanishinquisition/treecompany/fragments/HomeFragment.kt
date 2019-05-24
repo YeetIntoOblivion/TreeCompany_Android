@@ -13,7 +13,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.spanishinquisition.treecompany.R
-import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
+import com.spanishinquisition.treecompany.adapters.ProjectAdapter
 import com.spanishinquisition.treecompany.models.projects.Project
 import com.spanishinquisition.treecompany.rest.getClient
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -22,12 +22,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
-    private lateinit var listener: ProjectsAdapter.OnProjectSelectedListener
+    private lateinit var listener: ProjectAdapter.OnProjectSelectedListener
     private lateinit var spinner: Spinner
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is ProjectsAdapter.OnProjectSelectedListener)
+        if (context is ProjectAdapter.OnProjectSelectedListener)
             listener = context
         else
             throw RuntimeException("Parent context of HomeFragment is incorrect")
@@ -41,7 +41,7 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         view.projectListRV
             .apply {
-                adapter = ProjectsAdapter(listener)
+                adapter = ProjectAdapter(listener)
                 layoutManager = LinearLayoutManager(context)
             }
 
@@ -66,31 +66,32 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         when (position) {
             0 -> {
-                getSortedProjects(0, 1)
+                getSortedProjects(0)
             }
             1 -> {
-                getSortedProjects(1, 1)
+                getSortedProjects(1)
             }
             2 -> {
-                getSortedProjects(2, 1)
+                getSortedProjects(2)
             }
             3 -> {
-                getSortedProjects(3, 1)
+                getSortedProjects(3)
             }
             4 -> {
-                getSortedProjects(4, 1)
+                getSortedProjects(4)
             }
         }
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-    private fun getSortedProjects(quota: Int, platformId: Int) {
+    private fun getSortedProjects(quota: Int) {
+        val platformId = this.activity!!.getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).getInt(getString(R.string.pref_platform_id), resources.getInteger(R.integer.default_platform_id))
         val call = getClient().sortedBy(quota, platformId)
         call.enqueue(object : Callback<List<Project>> {
             override fun onResponse(call: Call<List<Project>>, response: Response<List<Project>>) {
                 val projects = response.body()
-                (view!!.projectListRV.adapter as ProjectsAdapter).projects = projects!!.toTypedArray()
+                (view!!.projectListRV.adapter as ProjectAdapter).projects = projects!!.toTypedArray()
             }
 
             override fun onFailure(call: Call<List<Project>>, t: Throwable) {
