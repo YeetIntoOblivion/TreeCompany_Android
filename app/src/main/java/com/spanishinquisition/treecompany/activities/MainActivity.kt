@@ -1,5 +1,6 @@
 package com.spanishinquisition.treecompany.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -14,12 +15,11 @@ import com.spanishinquisition.treecompany.adapters.IdeationAdapter
 import com.spanishinquisition.treecompany.adapters.IdeationQuestionAdapter
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
 import com.spanishinquisition.treecompany.fragments.*
-
+import com.spanishinquisition.treecompany.models.projects.Project
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
     ProjectsAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener,
     IdeationQuestionAdapter.OnIdeationQuestionSelectionListener {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_home -> {
                 switchFragments(HomeFragment())
@@ -70,8 +69,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_questionnaires)
             }
             R.id.nav_info -> {
-                // TODO maak een info fragment voor mij b!tch
-                supportActionBar?.setTitle(R.string.menu_info)
+//                // TODO maak een info fragment voor mij b!tch
+//                supportActionBar?.setTitle(R.string.menu_info)
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_settings -> {
                 switchFragments(SettingsFragment())

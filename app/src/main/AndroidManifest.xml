@@ -15,6 +15,8 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
+        <activity android:name=".activities.ChoosePlatformActivity">
+        </activity>
         <activity
                 android:name=".activities.MainActivity"
                 android:label="@string/title_activity_main"
@@ -24,8 +26,6 @@
         </activity>
         <activity android:name=".activities.LoginActivity">
         </activity>
-
-
         <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
