@@ -12,11 +12,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.ProjectAdapter
-import com.spanishinquisition.treecompany.fragments.HomeFragment
-import com.spanishinquisition.treecompany.fragments.IdeasFragment
-
-import com.spanishinquisition.treecompany.fragments.SettingsFragment
+import com.spanishinquisition.treecompany.fragments.*
 import com.spanishinquisition.treecompany.models.projects.Project
+
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ProjectAdapter.OnProjectSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,8 +55,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 switchFragments(HomeFragment())
                 supportActionBar?.setTitle(R.string.menu_home)
             }
+            R.id.nav_account -> {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
             R.id.nav_qr -> {
-                // TODO maak een fragment voor mij b!tch
                 supportActionBar?.setTitle(R.string.menu_qr)
             }
             R.id.nav_ideations -> {
@@ -63,14 +67,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_ideations)
             }
             R.id.nav_questionnaires -> {
-                // TODO maak een vragenlijst fragment voor mij b!tch
                 supportActionBar?.setTitle(R.string.menu_questionnaires)
             }
             R.id.nav_info -> {
-//                // TODO maak een info fragment voor mij b!tch
-//                supportActionBar?.setTitle(R.string.menu_info)
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+                switchFragments(InfoFragment())
+                supportActionBar?.setTitle(R.string.menu_info)
+
             }
             R.id.nav_settings -> {
                 switchFragments(SettingsFragment())
@@ -82,12 +84,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    /*
+ * Methode dat aan de supportFragmentManager meegeeft dat er van fragment moet worden gewisseld.
+ */
+
     private fun switchFragments(fragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.mainContent, fragment).commit()
     }
 
     override fun onProjectSelected(project: Project) {
-        TODO("not implemented")
+
     }
 }

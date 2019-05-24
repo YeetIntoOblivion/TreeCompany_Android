@@ -2,9 +2,11 @@ package com.spanishinquisition.treecompany.models.projects
 
 import com.google.gson.annotations.SerializedName
 
+/*
+ *  @author David Matei
+ */
 
 data class Phase (
-
 	@SerializedName("id") val id : Int,
 	@SerializedName("project") val project : Project,
 	@SerializedName("module") val module : Module?,

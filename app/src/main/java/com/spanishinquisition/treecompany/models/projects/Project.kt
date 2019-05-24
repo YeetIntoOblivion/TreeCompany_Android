@@ -3,9 +3,11 @@ import com.google.gson.annotations.SerializedName
 import com.spanishinquisition.treecompany.models.Platform
 import com.spanishinquisition.treecompany.models.User
 
+/*
+ *  @author David Matei
+ */
 
 data class Project (
-
 	@SerializedName("id") val id : Int,
 	@SerializedName("platform") val platform : Platform?,
 	@SerializedName("user") val user : User?,

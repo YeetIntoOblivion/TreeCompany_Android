@@ -16,6 +16,10 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlin.random.Random
 
+/*
+ *  @authors Sacha Buelens & Edwin Kai-Yin Tam
+ */
+
 class SplashScreenActivity : Activity() {
     private lateinit var loadingTv: TextView
     private lateinit var imageHome: ImageView
@@ -50,6 +54,15 @@ class SplashScreenActivity : Activity() {
         }
         t.start()
     }
+
+/*
+ * Deze methodes proberen om een verbinding te maken met de server. Slaagt het dan wordt er gezien of de app al eerder
+ * heeft gerunt. Eerste keer dat het opstart -> ChoosePlatformActivity. Zoveelste keer dat het opstart -> MainActivity.
+ * Lukt het toch niet om verbinding te maken met de server dan komt de pop-op om te vragen of er opnieuw moet worden
+ * geprobeerd.
+ */
+
+    //region Verify backend connection
 
     private fun contactBackEnd() {
         val observable = Observable.create<Boolean> { emitter ->
@@ -91,6 +104,8 @@ class SplashScreenActivity : Activity() {
         }
         builder.create().show()
     }
+
+    //endregion
 
     override fun onStop() {
         super.onStop()

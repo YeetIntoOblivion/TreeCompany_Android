@@ -7,6 +7,14 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
+/*
+ *  @author David Matei & Edwin Kai-Yin Tam
+ */
+
+/*
+ * Deze klasse is er om een eigen HTTP Client aan te maken dat 'onveilige' certificaten negeert.
+ */
+
 class UnsafeOkHttpClient {
 
     companion object {
@@ -45,7 +53,5 @@ class UnsafeOkHttpClient {
                 throw RuntimeException(e)
             }
         }
-
-
     }
 }

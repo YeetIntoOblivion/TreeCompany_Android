@@ -25,12 +25,13 @@
     <string name="title_activity_main">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Niet ingelogd</string>
+    <string name="nav_header_subtitle">Je bent op het moment anoniem</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
+    <string name="menu_account">Account</string>
     <string name="menu_qr">QR-code scannen</string>
     <string name="menu_ideations">Ideeënborden</string>
     <string name="menu_questionnaires">Vragenlijsten</string>
@@ -78,5 +79,20 @@
     <string name="x_time_selection">Verander hier je platform.</string>
     <string name="pref_platform_name">pref_platform_name</string>
     <string name="change_platform">Platform veranderen</string>
+    <string name="info_why_title">Waarom?</string>
+    <string name="info_how_title">Hoe?</string>
+    <string name="info_why_main">Burgers betrekken bij beleid is heel erg belangrijk om beter beleid te kunnen maken en
+        een groter draagvlak te vinden voor beslissingen. Burgers zijn expert in hun eigen buurt, interesses en
+        activiteiten. Maar het is een uitdaging voor elke overheid en organisaties om een breed publiek te bereiken en
+        niet telkens dezelfde burgers te laten deelnemen.
+    </string>
+    <string name="info_how_main">
+        <i>City of Ideas</i>
+        is een app waarbij burgers sneller hun mening kunnen laten horen. Een
+        gemeente of organisatie kan projecten aanmaken met vragenlijsten of ideations, waarbij je zelf ideeën kan geven.
+    </string>
+    <string name="idea_list_item_title">idee titel</string>
+    <string name="idea_list_item_thing">idee attribuut</string>
+    <string name="idea_list_item_thingalso">idee</string>
 
 </resources>

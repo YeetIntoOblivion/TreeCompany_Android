@@ -2,9 +2,11 @@ package com.spanishinquisition.treecompany.models
 
 import com.google.gson.annotations.SerializedName
 
+/*
+ *  @author David Matei
+ */
 
 data class Event(
-
     @SerializedName("id") val id: Int,
     @SerializedName("organisation") val organisation: String,
     @SerializedName("name") val name: String,

@@ -13,6 +13,10 @@ import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.activities.ChoosePlatformActivity
 import kotlinx.android.synthetic.main.fragment_settings.view.*
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class SettingsFragment : Fragment() {
     private lateinit var changePlatformBtn: Button
 

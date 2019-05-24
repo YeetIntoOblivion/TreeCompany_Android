@@ -28,27 +28,18 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import java.lang.Exception
 
+/*
+ *  @author David Matei
+ */
 
 class IdeasFragment : Fragment() {
 
     private lateinit var listener: IdeaAdapter.IdeaSelectionListener
 
-/*
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        if (context is IdeaAdapter.IdeaSelectionListener) {
-            listener = context
-        } else {
-            throw Exception()
-        }
-    }
-*/
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ideas, container, false)
         val call = getClient().getIdeas(1)
 

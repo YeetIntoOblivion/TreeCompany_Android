@@ -7,6 +7,10 @@ import android.widget.Button
 import android.widget.EditText
 import com.spanishinquisition.treecompany.R
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginEmailEt : EditText
     private lateinit var loginPasswordEt : EditText
