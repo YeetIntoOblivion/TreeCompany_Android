@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".activities.LoginActivity">
         </activity>
+        <activity android:name=".activities.ProjectDetailActivity">
+        </activity>
         <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

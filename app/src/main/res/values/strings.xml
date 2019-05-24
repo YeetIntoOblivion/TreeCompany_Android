@@ -36,10 +36,10 @@
     <string name="menu_questionnaires">Vragenlijsten</string>
     <string name="menu_info">Info</string>
     <string name="menu_settings">Instellingen</string>
-    <string name="connection_title">Verbindingsfout</string>
-    <string name="connection_msg">Geen verbinding, opnieuw proberen?</string>
-    <string name="connection_dialog_retry">Opnieuw</string>
-    <string name="connection_dialog_close">Afsluiten</string>
+    <string name="dialog_connection_title">Verbindingsfout</string>
+    <string name="dialog_connection_msg">Geen verbinding, opnieuw proberen?</string>
+    <string name="dialog_connection_retry">Opnieuw</string>
+    <string name="dialog_connection_shutdown">Afsluiten</string>
     
     <string name="projecttitle">ProjectTitle</string>
     <string name="huidige_fase">Huidige Fase</string>

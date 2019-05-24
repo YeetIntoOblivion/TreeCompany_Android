@@ -88,8 +88,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onProjectSelected(project: Project) {
-
         val intent = Intent(this, ProjectDetailActivity::class.java)
         intent.putExtra("projectid", project.id)
+        startActivity(intent)
     }
 }
