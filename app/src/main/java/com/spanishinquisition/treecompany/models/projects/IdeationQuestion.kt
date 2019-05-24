@@ -3,8 +3,11 @@ package com.spanishinquisition.treecompany.models.projects
 import com.google.gson.annotations.SerializedName
 import com.spanishinquisition.treecompany.models.projects.Ideation
 
-data class IdeationQuestion (
+/*
+ *  @author David Matei
+ */
 
+data class IdeationQuestion (
     @SerializedName("description") val description : String?,
     @SerializedName("siteUrl") val siteUrl : String?,
     @SerializedName("questionTitle") val questionTitle : String?,

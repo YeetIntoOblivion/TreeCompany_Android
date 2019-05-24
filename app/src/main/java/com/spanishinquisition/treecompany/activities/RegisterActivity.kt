@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.spanishinquisition.treecompany.R
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    author David Matei
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
                                                    android:orientation="vertical"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="wrap_content">
 
     <TextView
-            android:text="TextView"
+            android:text="@string/idea_list_item_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/IdeaTitel" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
@@ -15,7 +17,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:background="#A39D9D" android:textSize="18sp" android:textColor="#000000"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/idea_list_item_thing"
             android:layout_width="0dp"
             android:layout_height="18dp"
             android:id="@+id/IdeaText"
@@ -24,7 +26,7 @@
             android:layout_marginTop="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
             android:textStyle="bold"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/idea_list_item_thingalso"
             android:layout_width="132dp"
             android:layout_height="15dp"
             android:id="@+id/IdeaLike"

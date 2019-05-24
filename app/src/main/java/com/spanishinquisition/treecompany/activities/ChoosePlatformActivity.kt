@@ -17,6 +17,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSelectedListener {
     private lateinit var firstTimeExplain: TextView
     private lateinit var firstTimeRV: RecyclerView
@@ -52,6 +56,10 @@ class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSe
         }
     }
 
+/*
+ * Methode om de lijst van platforms op te halen en op te vullen.
+ */
+
     private fun getPlatforms() {
         val call = getClient().getPlatforms()
         call.enqueue(object : Callback<List<Platform>> {
@@ -69,6 +77,10 @@ class ChoosePlatformActivity : AppCompatActivity(), PlatformAdapter.OnPlatformSe
             }
         })
     }
+
+    /*
+ * Methode dat naargelang het de eerste keer is of de zoveelste keer de uitleg wisselt.
+ */
 
     private fun switchText() {
         val firstTime = getSharedPreferences(getString(R.string.app_pref),Context.MODE_PRIVATE).getBoolean(getString(R.string.pref_platform), true)

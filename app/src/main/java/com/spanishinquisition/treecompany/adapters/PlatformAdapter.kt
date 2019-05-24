@@ -9,6 +9,10 @@ import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.Platform
 import kotlinx.android.synthetic.main.platform_list_item.view.*
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class PlatformAdapter(private val listener: OnPlatformSelectedListener) : RecyclerView.Adapter<PlatformViewHolder>() {
     var platforms: Array<Platform> = arrayOf()
         set(platforms) {

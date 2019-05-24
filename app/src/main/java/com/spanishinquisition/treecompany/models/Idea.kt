@@ -4,9 +4,11 @@ import com.google.gson.annotations.SerializedName
 import com.spanishinquisition.treecompany.models.fields.*
  import com.spanishinquisition.treecompany.models.projects.IdeationQuestion
 
+/*
+ *  @author David Matei
+ */
 
 data class Idea(
-
     @SerializedName("id") val id: Int,
     @SerializedName("ideaQuestion") val ideaQuestion: IdeationQuestion?,
     @SerializedName("user") val user: User?,
