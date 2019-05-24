@@ -13,12 +13,12 @@ import androidx.fragment.app.Fragment
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.IdeationAdapter
 import com.spanishinquisition.treecompany.adapters.IdeationQuestionAdapter
-import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
+import com.spanishinquisition.treecompany.adapters.ProjectAdapter
 import com.spanishinquisition.treecompany.fragments.*
 import com.spanishinquisition.treecompany.models.projects.Project
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
-    ProjectsAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener,
+    ProjectAdapter.OnProjectSelectedListener, IdeationAdapter.OnIdeationSelectionListener,
     IdeationQuestionAdapter.OnIdeationQuestionSelectionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {

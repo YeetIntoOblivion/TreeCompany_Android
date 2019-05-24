@@ -51,15 +51,15 @@ class IdeasFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_ideas, container, false)
         view.findViewById<RecyclerView>(R.id.rvIdeas).apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = IdeaAdapter(context/*, listener*/)
+            adapter = IdeaAdapter(/*context, listener*/)
         }
-        getIdeas(iQuestionId)
+        getIdeas(1)
         return view
     }
 
 
     fun getIdeas(iQuestionId: Int) {
-        val call = getClient().GetIdeas(iQuestionId)
+        val call = getClient().getIdeas(iQuestionId)
 
         call.enqueue(object : Callback<List<Idea>> {
             override fun onResponse(call: Call<List<Idea>>, response: Response<List<Idea>>) {
@@ -70,7 +70,7 @@ class IdeasFragment : Fragment() {
             override fun onFailure(call: Call<List<Idea>>, t: Throwable) {
                 Toast.makeText(
                     this@IdeasFragment.context,
-                    getString(R.string.connection_title),
+                    getString(R.string.dialog_connection_title),
                     Toast.LENGTH_LONG
                 ).show()
             }

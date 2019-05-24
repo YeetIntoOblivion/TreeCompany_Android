@@ -11,10 +11,10 @@ import com.spanishinquisition.treecompany.models.Idea
 import kotlinx.android.synthetic.main.idea_list_item.view.*
 
 class IdeaAdapter(
-    private val context: Context
-/*
-    private val ideaSelectionListener: IdeaAdapter.IdeaSelectionListener
-*/
+    /*  private val context: Context
+
+      private val ideaSelectionListener: IdeaAdapter.IdeaSelectionListener
+  */
 ) : RecyclerView.Adapter<IdeaAdapter.IdeaViewHolder>() {
     class IdeaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

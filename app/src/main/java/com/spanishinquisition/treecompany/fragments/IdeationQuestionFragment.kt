@@ -58,7 +58,7 @@ class IdeationQuestionFragment : Fragment() {
 
 
     fun GetIdeationQuestions(moduleId: Int) {
-        val call = getClient().GetIdeationQuestions(moduleId)
+        val call = getClient().getIdeationQuestions(moduleId)
 
         call.enqueue(object : Callback<List<IdeationQuestion>> {
             override fun onResponse(call: Call<List<IdeationQuestion>>, response: Response<List<IdeationQuestion>>) {
@@ -70,7 +70,7 @@ class IdeationQuestionFragment : Fragment() {
             override fun onFailure(call: Call<List<IdeationQuestion>>, t: Throwable) {
                 Toast.makeText(
                     this@IdeationQuestionFragment.context,
-                    getString(R.string.connection_title),
+                    getString(R.string.dialog_connection_title),
                     Toast.LENGTH_LONG
                 ).show()
             }

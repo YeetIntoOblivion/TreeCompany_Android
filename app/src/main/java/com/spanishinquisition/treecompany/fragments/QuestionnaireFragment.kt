@@ -1,6 +1,7 @@
 package com.spanishinquisition.treecompany.fragments
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -50,7 +51,7 @@ class QuestionnaireFragment : Fragment() {
 
 
     fun GetQuestionnaires(projectId: Int) {
-        val call = getClient().GetQuestionnaires(projectId)
+        val call = getClient().getQuestionnaires(projectId)
 
         call.enqueue(object : Callback<List<Questionnaire>> {
             override fun onResponse(call: Call<List<Questionnaire>>, response: Response<List<Questionnaire>>) {
@@ -59,10 +60,11 @@ class QuestionnaireFragment : Fragment() {
                     questionnaires!!.toTypedArray()
             }
 
+            @SuppressLint("ResourceType")
             override fun onFailure(call: Call<List<Questionnaire>>, t: Throwable) {
                 Toast.makeText(
                     this@QuestionnaireFragment.context,
-                    getString(R.string.connection_title),
+                    getString(R.id.textinput_error),
                     Toast.LENGTH_LONG
                 ).show()
             }

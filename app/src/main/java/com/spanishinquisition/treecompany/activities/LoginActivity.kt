@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
 
-            val call = getClient().userLogin(email, password)
+          /*  val call = getClient().userLogin(email, password)
 
             call.enqueue(object : Callback<User> {
                 override fun onFailure(call: Call<User>, t: Throwable) {
@@ -73,13 +73,13 @@ class LoginActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<User>, response: Response<User>) {
 
-/*
+*//*
                     response.body().user
-*/
+*//*
                 }
 
             })
-
+*/
         }
         loginRegisterBtn.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))

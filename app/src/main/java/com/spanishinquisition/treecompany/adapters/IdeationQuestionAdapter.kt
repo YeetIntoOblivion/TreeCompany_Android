@@ -12,7 +12,9 @@ import kotlinx.android.synthetic.main.ideationquestion_list_item.view.*
 
 
 class IdeationQuestionAdapter(
+
     context: Context,
+
     private val listener: OnIdeationQuestionSelectionListener
 ) :
     RecyclerView.Adapter<IdeationQuestionAdapter.IdeationQuestionViewHolder>() {

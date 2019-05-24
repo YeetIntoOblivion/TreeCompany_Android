@@ -48,7 +48,7 @@ class IdeationFragment : Fragment() {
 
         view.rvIdeation.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = IdeationAdapter(/*context,*/ listener)
+            adapter = IdeationAdapter(context, listener)
         }
         GetIdeations(projectId)
 
@@ -56,7 +56,7 @@ class IdeationFragment : Fragment() {
     }
 
     fun GetIdeations(projectId: Int) {
-        val call = getClient().GetIdeations(projectId)
+        val call = getClient().getIdeations(projectId)
         call.enqueue(object : Callback<List<Ideation>> {
 
             override fun onResponse(call: Call<List<Ideation>>, response: Response<List<Ideation>>) {
@@ -68,7 +68,7 @@ class IdeationFragment : Fragment() {
             override fun onFailure(call: Call<List<Ideation>>, t: Throwable) {
                 Toast.makeText(
                     this@IdeationFragment.context,
-                    getString(R.string.connection_title),
+                    getString(R.string.dialog_connection_title),
                     Toast.LENGTH_LONG
                 ).show()
             }

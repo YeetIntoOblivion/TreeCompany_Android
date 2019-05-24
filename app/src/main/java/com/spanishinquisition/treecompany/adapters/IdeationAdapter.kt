@@ -12,7 +12,7 @@ import com.spanishinquisition.treecompany.models.projects.Module
 import kotlinx.android.synthetic.main.ideation_list_item.view.*
 
 class IdeationAdapter(
-    //context: Context,
+    context: Context,
     private val listener: OnIdeationSelectionListener
 
 ) :

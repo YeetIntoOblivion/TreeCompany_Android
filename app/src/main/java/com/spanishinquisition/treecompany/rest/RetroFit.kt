@@ -6,10 +6,7 @@ import com.google.gson.GsonBuilder
 import com.spanishinquisition.treecompany.models.Idea
 import com.spanishinquisition.treecompany.models.User
 import com.spanishinquisition.treecompany.models.Platform
-import com.spanishinquisition.treecompany.models.projects.Ideation
-import com.spanishinquisition.treecompany.models.projects.Module
-import com.spanishinquisition.treecompany.models.projects.Project
-import com.spanishinquisition.treecompany.models.projects.Questionnaire
+import com.spanishinquisition.treecompany.models.projects.*
 import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -42,14 +39,14 @@ interface ApiService {
     @GET("api/platform/GetPlatforms")
     fun getPlatforms() : Call<List<Platform>>
 
-    //USERCONTROLLER
+ /*   //USERCONTROLLER
     @FormUrlEncoded
     @POST("api/User/Login")
     fun userLogin(
         @Field("Email")email:String,
         @Field("Password")passwd:String
 
-    ):Call<User>
+    ):Call<User>*/
 
     //PROJECTCONTROLLER
     //GET PROJECT BY ID
@@ -80,15 +77,15 @@ interface ApiService {
 
 
     @GET("api/module/GetIdeations")
-    fun GetIdeations(@Query("projectId") projectId:Int): Call<List<Ideation>>
+    fun getIdeations(@Query("projectId") projectId:Int): Call<List<Ideation>>
 
 
     @GET("api/module/GetQuestionnaires")
-    fun GetQuestionnaires(@Query("projectId") projectId:Int): Call<List<Questionnaire>>
+    fun getQuestionnaires(@Query("projectId") projectId:Int): Call<List<Questionnaire>>
     // TODO() POST AND PUT
 
     @GET("api/module/GetIdeationQuestions")
-    fun GetIdeationQuestions(@Query("moduleId") moduleId: Int): Call<List<IdeationQuestion>>
+    fun getIdeationQuestions(@Query("moduleId") moduleId: Int): Call<List<IdeationQuestion>>
 
     @GET("api/module/GetIdeas")
     fun getIdeas(@Query("ideationQuestionId") ideationQuestionId: Int): Call<List<Idea>>

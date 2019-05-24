@@ -50,7 +50,7 @@ class ModuleFragment : Fragment() {
 
 
         adapter.addFragment(qFragment, "Vragenlijst")
-        adapter.addFragment(iFragment, "Ideeen")
+        adapter.addFragment(iFragment, "Ideeën")
         viewpager.adapter = adapter
     }
 }
