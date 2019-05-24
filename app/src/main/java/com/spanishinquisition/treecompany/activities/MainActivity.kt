@@ -1,5 +1,6 @@
 package com.spanishinquisition.treecompany.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -18,6 +19,8 @@ import com.spanishinquisition.treecompany.fragments.SettingsFragment
 import com.spanishinquisition.treecompany.models.projects.Project
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ProjectsAdapter.OnProjectSelectedListener {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -85,6 +88,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onProjectSelected(project: Project) {
-        TODO("not implemented")
+
+        val intent = Intent(this, ProjectDetailActivity::class.java)
+        intent.putExtra("projectid", project.id)
     }
 }

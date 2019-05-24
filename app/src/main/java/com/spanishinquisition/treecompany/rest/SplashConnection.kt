@@ -5,9 +5,10 @@ import android.net.ConnectivityManager
 import java.io.IOException
 import okhttp3.Request
 
-const val BASE_URL = "https://10.0.2.2:5001"
+const val BASE_URL = "http://10.0.2.2:8080"
 
 class SplashConnection(private val context: Context) {
+
     fun isConnectedToServer(): Boolean {
         val connMgr = context.getSystemService(
             Context.CONNECTIVITY_SERVICE
@@ -20,6 +21,7 @@ class SplashConnection(private val context: Context) {
                     .build()
 
                 val client = UnsafeOkHttpClient.getUnsafeOkHttpClient()
+
                 return client.newCall(request).execute().isSuccessful
             } catch (e: IOException) {
                 e.printStackTrace()

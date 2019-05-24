@@ -18,7 +18,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/curPhase"
-            app:layout_constrainedStart_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintTop_toBottomOf="@+id/projectTitle"
@@ -27,20 +26,18 @@
             android:text="@string/phasename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/curPhase2"
-            app:layout_constrainedStart_toStartOf="parent"
+            android:id="@+id/curPhaseValue"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/curPhase" android:layout_marginTop="5dp"
-            app:layout_constraintHorizontal_bias="0.49"/>
+            app:layout_constraintTop_toBottomOf="@+id/curPhase" android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="0.496"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="@+id/projectView"
-            app:layout_constraintTop_toBottomOf="@+id/curPhase2"
-            android:text="@string/progress"
+            android:text="Vooruitgang"
             android:id="@+id/textView2"
-            android:layout_marginStart="8dp"/>
+            tools:layout_editor_absoluteX="164dp" app:layout_constraintTop_toBottomOf="@+id/curPhaseValue"
+            android:layout_marginTop="40dp"/>
     <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
@@ -48,9 +45,9 @@
             android:id="@+id/projectProgress"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginStart="3dp" android:layout_marginEnd="3dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+            android:layout_marginTop="17dp" app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
     <TextView
             android:text="@string/dateformat"
             android:layout_width="wrap_content"
@@ -70,31 +67,30 @@
     <Spinner
             android:layout_width="395dp"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner" android:dropDownWidth="match_parent"
+            android:id="@+id/phaseList" android:dropDownWidth="match_parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="5dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="5dp"
             app:layout_constraintHorizontal_bias="1.0" app:layout_constraintTop_toBottomOf="@+id/valueStart"
             android:layout_marginTop="10dp"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/phasename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/valuePhaseTitle"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="175dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="177dp"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintTop_toBottomOf="@+id/phaseList" android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
     <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp" app:srcCompat="@drawable/ic_menu_home"
             android:id="@+id/imageView2"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
     <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp" app:srcCompat="@drawable/finish"
-            android:id="@+id/imageView3" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+            android:id="@+id/imageView3" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
     <TextView
             android:text="Einde fase: "
             android:layout_width="wrap_content"
@@ -107,13 +103,43 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView5" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintTop_toBottomOf="@+id/valuePhaseTitle" android:layout_marginTop="8dp"/>
-    <fragment
+    <TextView
+            android:text="Geef jouw mening!"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:name="com.spanishinquisition.treecompany.fragments.ModuleForPhase"
-            android:id="@+id/fragment2"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelOpinion"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp" app:layout_constraintHorizontal_bias="0.498"/>
+    <TextView
+            android:text="Vragenlijst/Ideation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelModuleType" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+            app:layout_constraintTop_toBottomOf="@+id/labelOpinion" android:layout_marginTop="8dp"/>
+    <TextView
+            android:text="ModuleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelModuleTitle"
+            app:layout_constraintTop_toBottomOf="@+id/labelModuleType" android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+    <TextView
+            android:text="Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelModuleDescription"
+            app:layout_constraintTop_toBottomOf="@+id/labelModuleTitle" android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+    <Button
+            android:text="Vul module in!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnEnterModule" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/labelModuleDescription" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

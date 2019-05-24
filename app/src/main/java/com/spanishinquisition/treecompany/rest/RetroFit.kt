@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-var base_url: String = "https://10.0.2.2:5001/"
+var base_url: String = "http://10.0.2.2:5000/"
 
 
 fun getClient(): ApiService {

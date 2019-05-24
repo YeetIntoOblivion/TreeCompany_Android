@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.ProjectsAdapter
@@ -86,7 +87,10 @@ class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
     private fun getSortedProjects(quota: Int, platformId: Int) {
+
         val call = getClient().SortedBy(quota, platformId)
+
+
         call.enqueue(object : Callback<List<Project>> {
             override fun onResponse(call: Call<List<Project>>, response: Response<List<Project>>) {
                 val projects = response.body()
