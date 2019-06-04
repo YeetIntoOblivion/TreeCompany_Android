@@ -8,7 +8,7 @@ import com.spanishinquisition.treecompany.models.User
 /*
  *  @author David Matei
  */
-
+data class Ideation(
     @SerializedName("user") val user: User,
     @SerializedName("userIdea") val userIdea: Boolean,
     @SerializedName("event") val event: Event,
