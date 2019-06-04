@@ -9,6 +9,10 @@ import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.projects.Project
 import kotlinx.android.synthetic.main.project_list_item.view.*
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class ProjectAdapter(
     private val listener: OnProjectSelectedListener
 ) : RecyclerView.Adapter<ProjectViewHolder>() {
@@ -44,7 +48,6 @@ class ProjectAdapter(
     interface OnProjectSelectedListener {
         fun onProjectSelected(projectId: Int)
     }
-
 }
 
 class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {

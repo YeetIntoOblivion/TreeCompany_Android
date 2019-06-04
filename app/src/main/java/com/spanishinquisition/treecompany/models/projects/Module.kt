@@ -3,6 +3,9 @@ package com.spanishinquisition.treecompany.models.projects
 import com.google.gson.annotations.SerializedName
 import com.spanishinquisition.treecompany.models.ModuleType
 
+/*
+ *  @author David Matei
+ */
 
 open class Module(
     @SerializedName("id") val id: Int,

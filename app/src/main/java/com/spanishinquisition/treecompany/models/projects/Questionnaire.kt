@@ -4,6 +4,10 @@ import com.google.gson.annotations.SerializedName
 import com.spanishinquisition.treecompany.models.ModuleType
 import com.spanishinquisition.treecompany.models.projects.Module
 
+/*
+ *  @author David Matei
+ */
+
 data class Questionnaire ( //TODO() INHERIT FROM MODULE
 
     @SerializedName("id") val id: Int,

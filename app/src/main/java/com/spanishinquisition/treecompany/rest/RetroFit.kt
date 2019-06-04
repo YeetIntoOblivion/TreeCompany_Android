@@ -15,7 +15,15 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import java.io.IOException
 
+/*
+ *  @author David Matei & Edwin Kai-Yin Tam
+ */
+
 var BASE_URL: String = "https://10.0.2.2:5001/"
+
+/*
+ * Deze methode dient om een Retrofit client op te stellen dat HTTP requesten opstelt en verwerkt.
+ */
 
 fun getClient(): ApiService {
     val gson = GsonBuilder()
@@ -37,7 +45,7 @@ interface ApiService {
     //PLATFORMCONTROLLER
     //GET ALL PLATFORMS
     @GET("api/platform/GetPlatforms")
-    fun getPlatforms() : Call<List<Platform>>
+    fun getPlatforms(): Call<List<Platform>>
 
  /*   //USERCONTROLLER
     @FormUrlEncoded
@@ -56,9 +64,6 @@ interface ApiService {
     //GET SORTED PROJECTS BY PLATFORM ID
     @GET("api/project/SortedBy")
     fun sortedBy(@Query("quota") quota: Int, @Query("platformId") platformId: Int): Call<List<Project>>
-
-    //TODO(put)
-
 
     //MODULECONTROLLER
     //GET list all the modules of one project
@@ -90,6 +95,10 @@ interface ApiService {
     @GET("api/module/GetIdeas")
     fun getIdeas(@Query("ideationQuestionId") ideationQuestionId: Int): Call<List<Idea>>
 }
+/*
+ * Deze methode wordt bij de splash opgeroepen om te testen of er al dan niet een verbinding kan worden vastgesteld met
+ * de server.
+ */
 
 fun isConnectedToServer(context: Context): Boolean {
     val connMgr = context.getSystemService(

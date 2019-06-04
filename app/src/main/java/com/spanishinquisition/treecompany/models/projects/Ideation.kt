@@ -5,7 +5,9 @@ import com.spanishinquisition.treecompany.models.Event
 import com.spanishinquisition.treecompany.models.ModuleType
 import com.spanishinquisition.treecompany.models.User
 
-data class Ideation( //TODO() INHERIT FROM MODULE
+/*
+ *  @author David Matei
+ */
 
     @SerializedName("user") val user: User,
     @SerializedName("userIdea") val userIdea: Boolean,

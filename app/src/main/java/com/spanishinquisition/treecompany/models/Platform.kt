@@ -1,5 +1,9 @@
 package com.spanishinquisition.treecompany.models
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 data class Platform(
     val id: Int,
     val name: String,

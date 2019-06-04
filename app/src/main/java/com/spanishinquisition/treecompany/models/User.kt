@@ -2,9 +2,11 @@ package com.spanishinquisition.treecompany.models
 
 import com.google.gson.annotations.SerializedName
 
+/*
+ *  @author David Matei
+ */
 
 data class User (
-
 	@SerializedName("name") val name : String?,
 	@SerializedName("zipcode") val zipcode : String?,
 	@SerializedName("gender") val gender : Boolean?,
@@ -14,7 +16,6 @@ data class User (
 	@SerializedName("description") val description : String?,
 	@SerializedName("banned") val banned : Boolean?,
 	@SerializedName("active") val active : Boolean?,
-
 
 	@SerializedName("id") val id : String,
 	@SerializedName("userName") val userName : String?,

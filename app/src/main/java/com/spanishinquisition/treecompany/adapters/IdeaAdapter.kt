@@ -10,6 +10,10 @@ import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.models.Idea
 import kotlinx.android.synthetic.main.idea_list_item.view.*
 
+/*
+ *  @author David Matei
+ */
+
 class IdeaAdapter(
     /*  private val context: Context
 
@@ -47,15 +51,9 @@ class IdeaAdapter(
         vh.Titel.text = idea.title
         vh.Text.text = idea.field!!.text
         vh.Like.text = idea.voteCount.toString()
-
-        /* vh.itemView.setOnClickListener {
-             ideaSelectionListener.onIdeaSelected(ideas[index])
-         }*/
     }
 
     interface IdeaSelectionListener {
         fun onIdeaSelected(idea: Idea)
     }
-
-
 }

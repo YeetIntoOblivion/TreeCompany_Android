@@ -24,6 +24,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.nio.channels.Selector
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class HomeFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var listener: ProjectAdapter.OnProjectSelectedListener
     private lateinit var spinner: Spinner

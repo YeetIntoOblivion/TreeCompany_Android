@@ -15,6 +15,10 @@ import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Response
 
+/*
+ *  @author Edwin Kai-Yin Tam
+ */
+
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginEmailEt: EditText
     private lateinit var loginPasswordEt: EditText
