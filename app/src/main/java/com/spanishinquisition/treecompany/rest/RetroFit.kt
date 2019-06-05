@@ -19,7 +19,8 @@ import java.io.IOException
  *  @author David Matei & Edwin Kai-Yin Tam
  */
 
-var BASE_URL: String = "https://10.0.2.2:5001/"
+//var BASE_URL: String = "https://10.0.2.2:5001/"
+var BASE_URL: String = "https://35.187.60.212/"
 
 /*
  * Deze methode dient om een Retrofit client op te stellen dat HTTP requesten opstelt en verwerkt.

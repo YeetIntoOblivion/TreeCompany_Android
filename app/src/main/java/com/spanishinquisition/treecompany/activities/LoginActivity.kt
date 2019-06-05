@@ -1,5 +1,6 @@
 package com.spanishinquisition.treecompany.activities
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -54,45 +55,33 @@ class LoginActivity : AppCompatActivity() {
             val email = loginEmailEt.text.toString().trim()
             val password = loginPasswordEt.text.toString().trim()
 
-            if (email.isEmpty()) {
-                loginEmailEt.error = "Email required"
-                loginEmailEt.requestFocus()
+            if(email.isEmpty() || password.isEmpty()) {
+                if (email.isEmpty()) {
+                    loginEmailEt.error = "Email required"
+                    loginEmailEt.requestFocus()
+
+                }
+                if (password.isEmpty()) {
+                    loginPasswordEt.error = "Password required"
+                    loginPasswordEt.requestFocus()
+                }
                 return@setOnClickListener
             }
 
-
-            if (password.isEmpty()) {
-                loginPasswordEt.error = "Password required"
-                loginPasswordEt.requestFocus()
-                return@setOnClickListener
+            if (email == "jan@cityofideas.be" && password == "123456"){
+                getSharedPreferences(getString(R.string.app_pref), Context.MODE_PRIVATE).edit().putBoolean("accountLoggedIn", true).apply()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }
-
-
-          /*  val call = getClient().userLogin(email, password)
-
-            call.enqueue(object : Callback<User> {
-                override fun onFailure(call: Call<User>, t: Throwable) {
-                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                }
-
-                override fun onResponse(call: Call<User>, response: Response<User>) {
-
-*//*
-                    response.body().user
-*//*
-                }
-
-            })
-*/
         }
         loginRegisterBtn.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
-        }
-
-        loginRegisterBtn.setOnClickListener{
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }
