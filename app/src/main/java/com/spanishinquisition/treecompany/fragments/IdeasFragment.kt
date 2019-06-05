@@ -17,15 +17,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.spanishinquisition.treecompany.R
 import com.spanishinquisition.treecompany.adapters.IdeaAdapter
 import com.spanishinquisition.treecompany.models.Idea
-import com.spanishinquisition.treecompany.models.projects.Project
-import com.spanishinquisition.treecompany.models.projects.Questionnaire
 import com.spanishinquisition.treecompany.rest.getClient
 import kotlinx.android.synthetic.main.fragment_ideas.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
-import retrofit2.Retrofit
 import java.lang.Exception
 
 /*
@@ -34,14 +30,27 @@ import java.lang.Exception
 
 class IdeasFragment : Fragment() {
 
-    private lateinit var listener: IdeaAdapter.IdeaSelectionListener
+    // private lateinit var listener: IdeaAdapter.IdeaSelectionListener
+
+    var iQuestionId: Int = 0
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_ideas, container, false)
-        val call = getClient().getIdeas(1)
+        view.findViewById<RecyclerView>(R.id.rvIdeas).apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = IdeaAdapter(/*context, listener*/)
+        }
+        getIdeas(1)
+        return view
+    }
+
+
+    fun getIdeas(iQuestionId: Int) {
+        val call = getClient().getIdeas(iQuestionId)
 
         call.enqueue(object : Callback<List<Idea>> {
             override fun onResponse(call: Call<List<Idea>>, response: Response<List<Idea>>) {
@@ -50,16 +59,13 @@ class IdeasFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<Idea>>, t: Throwable) {
-                throw Exception(t)
+                Toast.makeText(
+                    this@IdeasFragment.context,
+                    getString(R.string.dialog_connection_title),
+                    Toast.LENGTH_LONG
+                ).show()
             }
         })
-
-        view.findViewById<RecyclerView>(R.id.rvIdeas).apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = IdeaAdapter(context/*, listener*/)
-        }
-
-        return view
     }
 }
 

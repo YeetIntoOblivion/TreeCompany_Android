@@ -64,6 +64,24 @@
         <item>Reacties</item>
     </string-array>
 
+
+    <string name="questionnaire_title">Vragenlijst</string>
+    <string name="ideas_title">Ideeën</string>
+    <string name="fb_likes">Fb-likes</string>
+    <string name="twitter_likes">Twitter-likes</string>
+    <string name="like_count">Likes</string>
+
+    <string name="ideation_title">Ideation</string>
+    <string name="meer_info">Meer info</string>
+
+
+    <string name="iQuestion_title">Centrale Vraag</string>
+    <string name="GotIdeas_button">Ga naar ideeën</string>
+    <string name="url">URL</string>
+
+
+    <string name="idea_title">Idee</string>
+
     <string name="pref_platform">pref_platform</string>
     <string name="pref_platform_id">pref_platform_id</string>
     <string name="first_time_title">Welkom bij City of Ideas!</string>
@@ -94,5 +112,8 @@
     <string name="idea_list_item_title">idee titel</string>
     <string name="idea_list_item_thing">idee attribuut</string>
     <string name="idea_list_item_thingalso">idee</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

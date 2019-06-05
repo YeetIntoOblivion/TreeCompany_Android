@@ -4,11 +4,9 @@ import android.content.Context
 import android.net.ConnectivityManager
 import com.google.gson.GsonBuilder
 import com.spanishinquisition.treecompany.models.Idea
+import com.spanishinquisition.treecompany.models.User
 import com.spanishinquisition.treecompany.models.Platform
-import com.spanishinquisition.treecompany.models.projects.Ideation
-import com.spanishinquisition.treecompany.models.projects.Module
-import com.spanishinquisition.treecompany.models.projects.Project
-import com.spanishinquisition.treecompany.models.projects.Questionnaire
+import com.spanishinquisition.treecompany.models.projects.*
 import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -21,7 +19,8 @@ import java.io.IOException
  *  @author David Matei & Edwin Kai-Yin Tam
  */
 
-var BASE_URL: String = "https://10.0.2.2:5001/"
+//var BASE_URL: String = "https://10.0.2.2:5001/"
+var BASE_URL: String = "https://35.187.60.212/"
 
 /*
  * Deze methode dient om een Retrofit client op te stellen dat HTTP requesten opstelt en verwerkt.
@@ -49,6 +48,15 @@ interface ApiService {
     @GET("api/platform/GetPlatforms")
     fun getPlatforms(): Call<List<Platform>>
 
+ /*   //USERCONTROLLER
+    @FormUrlEncoded
+    @POST("api/User/Login")
+    fun userLogin(
+        @Field("Email")email:String,
+        @Field("Password")passwd:String
+
+    ):Call<User>*/
+
     //PROJECTCONTROLLER
     //GET PROJECT BY ID
     @GET("api/project/GetById")
@@ -61,7 +69,7 @@ interface ApiService {
     //MODULECONTROLLER
     //GET list all the modules of one project
     @GET("api/module/GetModules")
-    fun getModules(@Query("projectId") id: Int): Call<List<Module>>
+    fun getModules(@Query("projectId") projectId: Int): Call<List<Module>>
 
 
     @GET("api/module/GetQuestionnaire")
@@ -74,8 +82,19 @@ interface ApiService {
     fun getModuleForPhase(@Query("phaseId") phaseId: Int): Call<Module>
 
 
+    @GET("api/module/GetIdeations")
+    fun getIdeations(@Query("projectId") projectId:Int): Call<List<Ideation>>
+
+
+    @GET("api/module/GetQuestionnaires")
+    fun getQuestionnaires(@Query("projectId") projectId:Int): Call<List<Questionnaire>>
+    // TODO() POST AND PUT
+
+    @GET("api/module/GetIdeationQuestions")
+    fun getIdeationQuestions(@Query("moduleId") moduleId: Int): Call<List<IdeationQuestion>>
+
     @GET("api/module/GetIdeas")
-    fun getIdeas(@Query("id") id: Int): Call<List<Idea>>
+    fun getIdeas(@Query("ideationQuestionId") ideationQuestionId: Int): Call<List<Idea>>
 }
 /*
  * Deze methode wordt bij de splash opgeroepen om te testen of er al dan niet een verbinding kan worden vastgesteld met

@@ -15,12 +15,14 @@ import kotlinx.android.synthetic.main.idea_list_item.view.*
  */
 
 class IdeaAdapter(
-    private val context: Context
+    /*  private val context: Context
 
+      private val ideaSelectionListener: IdeaAdapter.IdeaSelectionListener
+  */
 ) : RecyclerView.Adapter<IdeaAdapter.IdeaViewHolder>() {
     class IdeaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val Titel: TextView = view.IdeaTitel
+        val Titel: TextView = view.tvTitel
         val Text: TextView = view.IdeaText
         val Like: TextView = view.IdeaLike
     }
