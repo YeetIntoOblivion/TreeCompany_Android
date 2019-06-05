@@ -68,31 +68,15 @@ class LoginActivity : AppCompatActivity() {
             }
 
 
-          /*  val call = getClient().userLogin(email, password)
-
-            call.enqueue(object : Callback<User> {
-                override fun onFailure(call: Call<User>, t: Throwable) {
-                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                }
-
-                override fun onResponse(call: Call<User>, response: Response<User>) {
-
-*//*
-                    response.body().user
-*//*
-                }
-
-            })
-*/
         }
         loginRegisterBtn.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
-        }
-
-        loginRegisterBtn.setOnClickListener{
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }
