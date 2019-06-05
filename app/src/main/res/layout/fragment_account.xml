@@ -17,7 +17,7 @@
                 android:id="@+id/imageView4" android:layout_marginTop="12dp"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginEnd="8dp" app:srcCompat="@drawable/ic_menu_account"/>
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="507dp"
@@ -28,56 +28,71 @@
                 android:background="@color/design_default_color_background">
 
             <TextView
-                    android:text="JanJanssens"
+                    android:text="jan@cityofideas.be"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/accountName" app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp" android:textSize="25sp"/>
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp" android:textSize="25sp"
+                    android:textColor="@color/design_default_color_on_secondary"/>
             <TextView
                     android:text="Naam"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="60dp"
-                    tools:layout_editor_absoluteX="16dp" android:id="@+id/nameText" android:textSize="16sp"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nameText" android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@+id/accountName"
+                    android:textColor="@color/design_default_color_on_secondary"/>
             <TextView
                     android:text="Achternaam"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="110dp"
-                    tools:layout_editor_absoluteX="16dp" android:id="@+id/textView8" android:textSize="16sp"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8" android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/nameText"
+                    android:layout_marginTop="32dp" android:textColor="@color/design_default_color_on_secondary"/>
             <TextView
                     android:text="Adres"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="163dp"
-                    tools:layout_editor_absoluteX="16dp" android:id="@+id/textView9" android:textSize="16sp"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView9" android:textSize="18sp" android:layout_marginTop="32dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" android:textColor="@color/design_default_color_on_secondary"/>
             <TextView
                     android:text="Gemeente"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="221dp"
-                    tools:layout_editor_absoluteX="16dp" android:id="@+id/textView10" android:textSize="16sp"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView10" android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" android:layout_marginTop="32dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    android:textColor="@color/design_default_color_on_secondary"/>
             <TextView
                     android:text="Jan"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="60dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/textView11" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp" app:layout_constraintBaseline_toBaselineOf="@+id/nameText"
+                    android:textSize="16sp"/>
             <TextView
                     android:text="Janssens"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="109dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/textView12" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp" app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+                    android:textSize="16sp"/>
             <TextView
                     android:text="Palingstraat 25"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="163dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/Palingstraat" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp" app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
+                    android:textSize="16sp"/>
             <TextView
                     android:text="Antwerpen"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="221dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/textView14" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp" app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
+                    android:textSize="16sp"/>
             <Button
                     android:text="Account wijzigen"
                     android:layout_width="wrap_content"
@@ -86,8 +101,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.512"
-                    android:layout_marginBottom="25dp" app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="40dp" app:layout_constraintBottom_toBottomOf="parent"
                     android:background="@drawable/rounded_corner"/>
+            <TextView
+                    android:text="Afmelden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView17" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp" android:textColor="@color/design_default_color_on_secondary"
+                    android:textSize="18sp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
