@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navHeaderTitle = headerView.findViewById(R.id.navHeaderTitle)
         navHeaderSubtitle = headerView.findViewById(R.id.navHeaderSubtitle)
 
-        var accountLoggedIn = getSharedPreferences(getString(R.string.app_pref), Context.MODE_PRIVATE).getBoolean("accountLoggedIn", false)
+        val accountLoggedIn = getSharedPreferences(getString(R.string.app_pref), Context.MODE_PRIVATE).getBoolean("accountLoggedIn", false)
         if (accountLoggedIn){
             navHeaderTitle.text = "Jan Janssens"
             navHeaderSubtitle.text = "jan@cityofideas.be"
@@ -77,8 +77,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 supportActionBar?.setTitle(R.string.menu_home)
             }
             R.id.nav_account -> {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+                val accountLoggedIn = getSharedPreferences(getString(R.string.app_pref), Context.MODE_PRIVATE).getBoolean("accountLoggedIn", false)
+                if (accountLoggedIn) {
+                    switchFragments(AccountFragment())
+                    supportActionBar?.setTitle("Account")
+                } else {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                }
             }
             R.id.nav_qr -> {
                 supportActionBar?.setTitle(R.string.menu_qr)
