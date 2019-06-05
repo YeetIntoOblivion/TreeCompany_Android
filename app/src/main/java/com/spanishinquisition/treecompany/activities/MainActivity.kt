@@ -86,17 +86,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     startActivity(intent)
                 }
             }
-            R.id.nav_qr -> {
-                supportActionBar?.setTitle(R.string.menu_qr)
-            }
-            R.id.nav_ideations -> {
-                switchFragments(ModuleFragment())
-                supportActionBar?.setTitle(R.string.menu_ideations)
-            }
-            R.id.nav_questionnaires -> {
-                switchFragments(IdeasFragment())
-                supportActionBar?.setTitle(R.string.menu_questionnaires)
-            }
+//            R.id.nav_qr -> {
+//                supportActionBar?.setTitle(R.string.menu_qr)
+//            }
+//            R.id.nav_ideations -> {
+//                switchFragments(ModuleFragment())
+//                supportActionBar?.setTitle(R.string.menu_ideations)
+//            }
+//            R.id.nav_questionnaires -> {
+//                switchFragments(IdeasFragment())
+//                supportActionBar?.setTitle(R.string.menu_questionnaires)
+//            }
             R.id.nav_info -> {
                 switchFragments(InfoFragment())
                 supportActionBar?.setTitle(R.string.menu_info)
